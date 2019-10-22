@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-
 def test_response(request):
     return HttpResponse('tu bedzie pierwsza strona z paskiem')
 
@@ -15,8 +14,6 @@ def after_login_response(request):
     return render(request, 'after_login.html')
 
 
-
-
 def stats_page(request):
     return render(request, 'stats.html')
 
@@ -24,6 +21,6 @@ def stats_page(request):
 def ranking_page(request):
     return render(request, 'ranking.html')
 
+
 def league_page(request):
     return render(request, 'leagues.html')
-

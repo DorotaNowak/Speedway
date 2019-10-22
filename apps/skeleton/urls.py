@@ -12,10 +12,9 @@ from django.urls import path, include
 urlpatterns = [
     path('accounts/profile/', after_login_response, name='test'),
     path('', home_response, name='home'),
-    path('accounts/profile/stats.html', stats_page),
-    path('accounts/profile/rankings.html', ranking_page),
-    path('accounts/profile/leagues.html', league_page),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('stats/', stats_page),
+    path('rankings/', ranking_page),
+    path('leagues/', league_page),
 ]
 
 from django.conf.urls import url
