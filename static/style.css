@@ -1,4 +1,21 @@
 body {
-    color: #444;
-    padding: 50px;
+
+    background: url("grand.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn {
+    margin: 5px;
+    width: 150px;
+}
+
+.card {
+    margin: 0 auto;
+    width: 600px;
+    height: 200px;
 }
