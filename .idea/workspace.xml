@@ -2,15 +2,144 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b990fdfc-1730-4467-ba94-872121c3fb25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/grand.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fantasy_league6/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/speedway_site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/speedway_site.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/migrations/0002_player3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Adam_Ellis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Adam_Ellis.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Adrian_Bialk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Adrian_Bialk.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Adrian_Miedziński.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Adrian_Miedziński.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Adrian_Woźniak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Adrian_Woźniak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Alan_Szczotka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Alan_Szczotka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Aleks_Rydlewski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Aleks_Rydlewski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Anders_Thomsen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Anders_Thomsen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Andreas_Jonsson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Andreas_Jonsson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Antonio_Lindbaeck.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Antonio_Lindbaeck.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Artem_Laguta.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Artem_Laguta.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Bartosz_Smektała.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Bartosz_Smektała.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Bartosz_Zmarzlik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Bartosz_Zmarzlik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Bartłomiej_Kowalski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Bartłomiej_Kowalski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Brady_Kurtz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Brady_Kurtz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Chris_Holder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Chris_Holder.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Cyprian_Bieliński.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Cyprian_Bieliński.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Damian_Boduch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Damian_Boduch.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Damian_Dróżdż.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Damian_Dróżdż.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Damian_Lotarski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Damian_Lotarski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Damian_Pawliczak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Damian_Pawliczak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Dawid_Lampart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Dawid_Lampart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Dominik_Kubera.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Dominik_Kubera.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Emil_Sayfutdinov.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Emil_Sayfutdinov.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Filip_Hjelmland.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Filip_Hjelmland.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Filip_Nizgorski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Filip_Nizgorski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Frederik_Jakobsen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Frederik_Jakobsen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Fredrik_Lindgren.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Fredrik_Lindgren.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Gleb_Chugunov.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Gleb_Chugunov.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Grigorij_Laguta.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Grigorij_Laguta.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Grzegorz_Zengota.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Grzegorz_Zengota.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Igor_Kopeć-Sobczyński.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Igor_Kopeć-Sobczyński.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jack_Holder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jack_Holder.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jaimon_Lidsey.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jaimon_Lidsey.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jakub_Jamróg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jakub_Jamróg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jakub_Miśkowiak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jakub_Miśkowiak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jakub_Osyczka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jakub_Osyczka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Janusz_Kołodziej.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Janusz_Kołodziej.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jarosław_Hampel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jarosław_Hampel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Jason_Doyle.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Jason_Doyle.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Justin_Stolp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Justin_Stolp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Kacper_Gosik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Kacper_Gosik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Kacper_Pludra.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Kacper_Pludra.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Kamil_Pytlewski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Kamil_Pytlewski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Kamil_Wieczorek.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Kamil_Wieczorek.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Kenneth_Bjerre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Kenneth_Bjerre.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Krzysztof_Buczkowski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Krzysztof_Buczkowski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Krzysztof_Kasprzak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Krzysztof_Kasprzak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Leon_Madsen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Leon_Madsen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Maciej_Janowski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Maciej_Janowski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Maciej_Kuromonow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Maciej_Kuromonow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Maksym_Drabik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Maksym_Drabik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Maksymilian_Bogdanowicz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Maksymilian_Bogdanowicz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Marcin_Turowski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Marcin_Turowski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Martin_Smolinski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Martin_Smolinski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Martin_Vaculik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Martin_Vaculik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Matej_Zagar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Matej_Zagar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Mateusz_Bartkowiak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Mateusz_Bartkowiak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Mateusz_Tonder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Mateusz_Tonder.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Max_Fricke.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Max_Fricke.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Michael_JepsenJensen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Michael_JepsenJensen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Michał_Gruchalski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Michał_Gruchalski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Mikkel_Michelsen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Mikkel_Michelsen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Nicki_Pedersen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Nicki_Pedersen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/NielsKristian_Iversen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/NielsKristian_Iversen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Nile_Tufft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Nile_Tufft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Norbert_Kościuch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Norbert_Kościuch.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Norbert_Krakowiak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Norbert_Krakowiak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Patryk_Dudek.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Patryk_Dudek.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Patryk_Rolnicki.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Patryk_Rolnicki.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Patryk_Wojdyło.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Patryk_Wojdyło.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Paweł_Miesiąc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Paweł_Miesiąc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Paweł_Przedpełski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Paweł_Przedpełski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Peter_Kildemand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Peter_Kildemand.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Piotr_Pawlicki.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Piotr_Pawlicki.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Piotr_Protasiewicz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Piotr_Protasiewicz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Przemysław_Liszka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Przemysław_Liszka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Przemysław_Pawlicki.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Przemysław_Pawlicki.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Rafał_Karczmarz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Rafał_Karczmarz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Robert_Lambert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Robert_Lambert.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Roman_Lakhbaum.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Roman_Lakhbaum.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Rune_Holta.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Rune_Holta.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Sebastian_Helwig.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Sebastian_Helwig.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Sebastian_Niedźwiedź.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Sebastian_Niedźwiedź.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Szymon_Szlauderbach.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Szymon_Szlauderbach.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Szymon_Woźniak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Szymon_Woźniak.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Tai_Woffinden.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Tai_Woffinden.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Tim_Sorensen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Tim_Sorensen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Tymoteusz_Picz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Tymoteusz_Picz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Vaclav_Milik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Vaclav_Milik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Viktor_Trofymov.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Viktor_Trofymov.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/Wiktor_Lampart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/Wiktor_Lampart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/photos/players/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/photos/players/scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/player_info/collect_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/player_info/collect_stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/fantasy_league/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/templates/after_login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/templates/leagues.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/leagues.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/templates/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/ranking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/templates/stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fantasy_league6/templates/stats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/skeleton/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db2.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db2.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/grand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/speedway_site/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/speedway_site/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/speedway_site/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/speedway_site/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,222 +170,43 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/speedway_site/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ranking.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/ranking.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leagues.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/leagues.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" selection-end-line="6" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="after_login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/after_login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="14" selection-end-line="15" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stats.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/stats.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/accounts/templates/registration/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/accounts/templates/accounts/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Python Script" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/main/forms.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/main/urls.py" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/register.html" />
-        <option value="$PROJECT_DIR$/accounts/templates/registration/register.html" />
-        <option value="$PROJECT_DIR$/templates/registration/register.html" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
-        <option value="$PROJECT_DIR$/skeleton/views.py" />
-        <option value="$PROJECT_DIR$/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/skeleton/urls.py" />
-        <option value="$PROJECT_DIR$/speedway_site/urls.py" />
-        <option value="$PROJECT_DIR$/apps/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/templates/after_login.html" />
-        <option value="$PROJECT_DIR$/apps/skeleton/urls.py" />
-        <option value="$PROJECT_DIR$/apps/skeleton/views.py" />
-        <option value="$PROJECT_DIR$/apps/skeleton/templates/stats.html" />
-        <option value="$PROJECT_DIR$/apps/skeleton/templates/ranking.html" />
-        <option value="$PROJECT_DIR$/apps/skeleton/templates/leagues.html" />
-        <option value="$PROJECT_DIR$/apps/accounts/templates/accounts/register.html" />
-        <option value="$PROJECT_DIR$/apps/accounts/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/apps/skeleton/templates/after_login.html" />
-        <option value="$PROJECT_DIR$/speedway_site/settings.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/static/style.css" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="576" />
-    <option name="y" value="106" />
-    <option name="width" value="970" />
-    <option name="height" value="835" />
-  </component>
   <component name="ProjectId" id="1RypeQVUb8BhcTnYd8OpQkFMAbt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Speedway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Speedway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Speedway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Speedway" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Speedway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Speedway" type="462c0819:PsiDirectoryNode" />
-              <item name="speedway_site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Speedway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Speedway" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Speedway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Speedway" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tutorial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\static" />
-      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway" />
-      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\apps\skeleton\templates" />
-      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\templates" />
-      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\templates\registration" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\apps\skeleton\templates" />
       <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\apps\skeleton\templates\skeleton" />
       <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\apps" />
       <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\accounts\templates\accounts" />
       <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\accounts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Karol\PycharmProjects\Speedway\apps" />
+      <recent name="C:\Users\Karol\PycharmProjects\Speedway\apps\fantasy_league\templates" />
+      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\static" />
+      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway" />
+      <recent name="C:\Users\Dorota Nowak\Desktop\Speedway\apps\skeleton\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -272,6 +222,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.manage">
+    <configuration name="assss" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="speedway_site" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/fantasy_league6" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apps/fantasy_league6/assss.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="speedway_site" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -290,6 +262,9 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="speedway_site" type="Python.DjangoServer" factoryName="Django server">
       <module name="speedway_site" />
@@ -313,14 +288,17 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Django server.speedway_site" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Python.assss" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.manage" />
+        <item itemvalue="Python.assss" />
       </list>
     </recent_temporary>
   </component>
@@ -338,6 +316,9 @@
       <workItem from="1570808170900" duration="2548000" />
       <workItem from="1570876144477" duration="6906000" />
       <workItem from="1570895593441" duration="3076000" />
+      <workItem from="1573255253817" duration="22160000" />
+      <workItem from="1573378911504" duration="685000" />
+      <workItem from="1573848950247" duration="2673000" />
     </task>
     <servers />
   </component>
@@ -350,32 +331,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="7" weight="0.32614943" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32902297" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32902297" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32478634" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15704697" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32478634" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -385,12 +340,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -398,261 +347,9 @@
       </map>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Speedway$manage.coverage" NAME="manage Coverage Results" MODIFIED="1573909547175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Speedway$assss.coverage" NAME="assss Coverage Results" MODIFIED="1573909539505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/fantasy_league6" />
     <SUITE FILE_PATH="coverage/speedway_site$manage.coverage" NAME="manage Coverage Results" MODIFIED="1570898813811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/speedway_site/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="94" column="20" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/ranking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/leagues.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/after_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/stats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/templates/accounts/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/registration/home.html" />
-    <entry file="file://$PROJECT_DIR$/templates/registration/register.html" />
-    <entry file="file://$PROJECT_DIR$/appss/accounts/templates/accounts/register.html" />
-    <entry file="file://$PROJECT_DIR$/accounts/templates/registration/register.html" />
-    <entry file="file://$PROJECT_DIR$/appss/accounts/views.py" />
-    <entry file="file://$PROJECT_DIR$/appss/skeleton/urls.py" />
-    <entry file="file://$PROJECT_DIR$/appss/skeleton/views.py" />
-    <entry file="file://$PROJECT_DIR$/appss/accounts/urls.py" />
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Speedway/urls.py" />
-    <entry file="file://$PROJECT_DIR$/Speedway/settings.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/registration/home.html" />
-    <entry file="file://$PROJECT_DIR$/templates/registration/register.html" />
-    <entry file="file://$PROJECT_DIR$/accounts/templates/registration/register.html" />
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/tokens.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/login.html" />
-    <entry file="file://$PROJECT_DIR$/apps/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/speedway_site/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="25" column="75" lean-forward="true" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
-          <folding>
-            <element signature="e#637#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/templates/accounts/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/accounts/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/after_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/leagues.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/ranking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/skeleton/templates/stats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/speedway_site/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
