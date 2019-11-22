@@ -7,4 +7,3 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
 ]
-
