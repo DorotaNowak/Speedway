@@ -1,14 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Logowanie{% endblock %}
 {% block content %}
+    <div class="login">
+        <div class="card text-center">
+            <div class="card-body">
+                <h4 class="card-title">Speedway</h4>
+                <h6 class="card-subtitle text-muted">Zaloguj się i dołącz do gry!</h6><br>
+                {% if form.errors %}Zły login lub hasło. Spróbuj ponownie.{% endif %}
 
-    {% if form.errors %}Your username and password didn't match. Please try again.{% endif %}
-    <form action="{% url 'login' %}" method="post" class="form-signin">
-        {% csrf_token %}
-        {{ form.as_p }}
+                <form action="{% url 'login' %}" method="post" class="form-signin">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="input-group">
+                        <span class="input-group-addon" style="background-color:#b77b48; color:white"><span
+                                class="glyphicon glyphicon-user"></span></span>
+                            <input class="form-control" id="{{ field.id_for_label }}" maxlength="30"
+                                   name="{{ field.html_name }}" value="{{ field.value }}" type="text"/>
+                            {{ field.errors }}
+                        </div>
+                    {% endfor %}
 
-        <input type="hidden" name="next" value="{{ next }}"/>
-        <button class="btn btn-primary" type="submit" value="login">Zaloguj się</button>
-    </form>
 
+                    <input type="hidden" name="next" value="{{ next }}"/>
+                    <button class="btn btn-primary" type="submit" value="login">Zaloguj się</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
