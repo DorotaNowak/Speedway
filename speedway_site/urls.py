@@ -4,7 +4,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
-    1. Add an import:  from fantasy_league6 import views
+    1. Add an import:  from fantasy_league import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
 Class-based views
     1. Add an import:  from other_app.views import Home
@@ -19,7 +19,7 @@ from django.contrib.auth.views import LoginView
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', include('apps.fantasy_league6.urls')),
+    path('', include('apps.fantasy_league.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('apps.accounts.urls')),

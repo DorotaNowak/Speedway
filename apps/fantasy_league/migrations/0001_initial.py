@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.CharField(max_length=500)),
                 ('complete', models.BooleanField()),
-                ('todolist', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fantasy_league6.ToDoList')),
+                ('todolist', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fantasy_league.ToDoList')),
             ],
         ),
     ]

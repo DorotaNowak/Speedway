@@ -6,19 +6,23 @@
             <div class="card-body">
                 <h4 class="card-title">Speedway</h4>
                 <h6 class="card-subtitle text-muted">Zaloguj się i dołącz do gry!</h6><br>
+
                 {% if form.errors %}Zły login lub hasło. Spróbuj ponownie.{% endif %}
 
                 <form action="{% url 'login' %}" method="post" class="form-signin">
                     {% csrf_token %}
-                    {% for field in form %}
-                        <div class="input-group">
-                        <span class="input-group-addon" style="background-color:#b77b48; color:white"><span
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><span
                                 class="glyphicon glyphicon-user"></span></span>
-                            <input class="form-control" id="{{ field.id_for_label }}" maxlength="30"
-                                   name="{{ field.html_name }}" value="{{ field.value }}" type="text"/>
-                            {{ field.errors }}
-                        </div>
-                    {% endfor %}
+                        <input class="form-control" id="{{ form.username.id_for_label }}" maxlength="30"
+                               name="{{ form.username.html_name }}" placeholder="login" type="text"/>
+
+                        <input class="form-control" id="{{ form.password.id_for_label }}" maxlength="30"
+                               name="{{ form.password.html_name }}" placeholder="hasło"
+                               type="password"/>
+                        {{ field.errors }}
+                    </div>
 
                     <input type="hidden" name="next" value="{{ next }}"/>
                     <button class="btn btn-primary" type="submit" value="login">Zaloguj się</button>

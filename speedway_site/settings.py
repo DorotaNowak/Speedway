@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.accounts',
-    'apps.fantasy_league6',
+    'apps.fantasy_league',
 ]
 
 MIDDLEWARE = [
