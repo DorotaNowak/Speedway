@@ -4,6 +4,7 @@
 
 {% block content %}
     <h2>{{ ls.name }}</h2>
+    <h2>{{ ls.player1.first_name }}</h2>
     <form method="post" , action="#">
         {% csrf_token %}
 
