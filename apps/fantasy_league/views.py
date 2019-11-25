@@ -1,11 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Team, Player
 from .forms import CreateTeamForm
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
-from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
 
@@ -47,9 +43,9 @@ def create(response):
 
 def index(response, id):
     ls = Team.objects.get(id=id)
+    players = Player.objects.all() #<Player: Player object (id)>
 
     if ls in response.user.team.all():
-
         if response.method == "POST":
             if response.POST.get("save"):
                 for item in ls.item_set.all():
@@ -72,7 +68,7 @@ def index(response, id):
                 else:
                     print("invalid")
 
-        return render(response, "list.html", {"ls": ls})
+        return render(response, "list.html", {"ls": ls, "query_results": players })
 
     return render(response, "home.html", {})
 
@@ -86,3 +82,5 @@ def view(request):
 @login_required
 def view(response):
     return render(response, "view.html", {})
+
+

@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 from django.contrib.auth.models import User
 
 
@@ -12,6 +11,9 @@ class Player(models.Model):
     nationality = models.CharField(max_length=10)
     price = models.DecimalField(max_digits=6, decimal_places=3)
 
+    def __str__(self):
+        return self.last_name + ' ' + self.first_name
+
 
 # related name  - user can access this by user.team
 class Team(models.Model):
@@ -22,20 +24,3 @@ class Team(models.Model):
     player3 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player3', null=True)
     player4 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player4', null=True)
     budget = models.DecimalField(default=10.0, max_digits=6, decimal_places=3)
-
-
-class ToDoList(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='todolist', null=True)
-    name = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.name
-
-
-class Item(models.Model):
-    text = models.CharField(max_length=500)
-    todolist = models.ForeignKey(Team, on_delete=models.CASCADE)
-    complete = models.BooleanField()
-
-    def __str__(self):
-        return self.text

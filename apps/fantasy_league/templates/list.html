@@ -5,6 +5,27 @@
 {% block content %}
     <h2>{{ ls.name }}</h2>
     <h2>{{ ls.player1.first_name }}</h2>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+        <h1>All sensors</h1>
+    <table>
+
+        {% for item in query_results %}
+        <tr>
+            <td>{{ item }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
     <form method="post" , action="#">
         {% csrf_token %}
 
@@ -30,6 +51,9 @@
             </div>
             <input type="text" , name="new">
         </div>
+
+
         <button type="submit" , name="save" , value="save" , class="btn btn-success">Zapisz</button>
     </form>
+
 {% endblock %}
