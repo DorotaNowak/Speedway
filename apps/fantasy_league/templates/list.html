@@ -1,31 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block footer_scripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+            crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="{% static 'list.css' %}">
+{% endblock footer_scripts %}
+
 
 {% block title %}Wybierz zawodników{% endblock %}
 
 {% block content %}
     <h2>{{ ls.name }}</h2>
     <h2>{{ ls.player1.first_name }}</h2>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Zawodnik 1</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             {% for item in query_results %}
+                <a class="dropdown-item" href="#">{{item}}</a>
+             {% endfor %}
+        </div>
+    </div>
 
-        <h1>All sensors</h1>
-    <table>
-
-        {% for item in query_results %}
-        <tr>
-            <td>{{ item }}</td>
-
-        </tr>
-        {% endfor %}
-    </table>
     <form method="post" , action="#">
         {% csrf_token %}
 
