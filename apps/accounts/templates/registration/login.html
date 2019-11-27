@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock footer_scripts %}
 {% block title %}Logowanie{% endblock %}
 {% block content %}
     <div class="login">
