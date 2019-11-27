@@ -1,5 +1,12 @@
-.form-control{
+.form-control {
     display: grid;
     padding: 20px;
     margin: 20px;
+}
+
+.btn-info {
+    width: 250px;
+    margin: 10px;
+    background-color: #00bfbf;
+    border-color: #00bfbf;
 }
