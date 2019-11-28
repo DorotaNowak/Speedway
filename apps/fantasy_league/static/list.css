@@ -8,3 +8,9 @@
     padding-bottom: 20px;
     padding-top: 5px;
 }
+
+img {
+    width: 20%;
+    border-radius: 8px;
+}
+

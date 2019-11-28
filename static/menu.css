@@ -43,7 +43,8 @@
 
 .btn-info{
     width: 300px;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     background-color: #00bfbf;
     border-color: #00bfbf;
 }
