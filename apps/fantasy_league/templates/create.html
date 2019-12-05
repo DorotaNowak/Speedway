@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}
-Stwórz drużynę
+    Stwórz drużynę
 {% endblock %}
 
+
+
 {% block content %}
-	<h3>Stwórz nową drużynę</h3>
-	<br>
-	<form method="post" action="/create/" class="form-group">
-		{% csrf_token %}
-		<div class="input-group mb-3">
-	  		<div class="input-group-prepend">
-	  		<button name="zapisz" type="submit" class="btn btn-success">Stwórz drużynę</button>
-	  		</div>
-	  		{{form.name}}
-		</div>
-	</form>
+    <h3>Stwórz nową drużynę</h3>
+    <br>
+    <form method="post" action="/create/" class="form-group">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button name="zapisz" type="submit" class="btn btn-success" style="background-color: #00bfbf">Stwórz drużynę</button>
+            </div>
+                {{ form.name }}
+        </div>
+    </form>
 {% endblock %}
