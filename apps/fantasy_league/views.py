@@ -22,7 +22,7 @@ def home(response):
     return render(response, "home.html", {})
 
 
-@login_required
+@login_required(redirect_field_name='')
 def create(response):
     if response.method == "POST":
         form = CreateTeamForm(response.POST)
@@ -41,9 +41,10 @@ def create(response):
     return render(response, "create.html", {"form": form})
 
 
+@login_required(redirect_field_name='')
 def index(response, id):
     ls = Team.objects.get(id=id)
-    players = Player.objects.all() #<Player: Player object (id)>
+    players = Player.objects.all()  # <Player: Player object (id)>
 
     if ls in response.user.team.all():
         if response.method == "POST":
@@ -68,7 +69,7 @@ def index(response, id):
                 else:
                     print("invalid")
 
-        return render(response, "list.html", {"ls": ls, "query_results": players })
+        return render(response, "list.html", {"ls": ls, "query_results": players})
 
     return render(response, "home.html", {})
 
@@ -82,5 +83,3 @@ def view(request):
 @login_required
 def view(response):
     return render(response, "view.html", {})
-
-
