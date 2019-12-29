@@ -21,35 +21,15 @@
         {% csrf_token %}
         <select class="form-control" id="optCity" name="city" required>
             {% for player in all_players %}
-                <option value="{{player.first_name}}">{{player}}</option>
+                <option value="{{ player.first_name }}">{{ player }}</option>
             {% endfor %}
         </select>
         <div class="input-group-prepend">
             <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
             </button>
         </div>
-
     </form>
 
-    <form method="post" , action="#">
-        {% csrf_token %}
-        <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Zawodnik 1
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for player in all_players %}
-                    <a class="dropdown-item" href="#" onchange="form.submit()" name="new" ,
-                       value={{ player.first_name }}>{{ player }}</a>
-                {% endfor %}
-            </div>
-        </div>
-
-        <div class="input-group-prepend">
-            <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
-            </button>
-        </div>
-    </form>
 
     <form method="post" , action="#">
         {% csrf_token %}
