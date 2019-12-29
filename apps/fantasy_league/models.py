@@ -14,6 +14,7 @@ class Player(models.Model):
     def __str__(self):
         return self.last_name + ' ' + self.first_name
 
+    # return path to player's image
     def get_path(self):
         return 'photos/players/' + self.last_name + '_' + self.first_name + '.jpg'
 

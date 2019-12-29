@@ -9,7 +9,7 @@
 {% block title %}Wybierz zawodników{% endblock %}
 
 {% block content %}
-    <h2>{{ ls.name }}</h2>
+    <h2>Nazwa drużyny: {{ ls.name }}</h2>
     <h2>{{ ls.player1 }}</h2>
     {% if ls.player1 %}
         <img src="{% static ls.player1.get_path %}"/>
@@ -19,36 +19,26 @@
 
     <form method="post" , action="#">
         {% csrf_token %}
+
         <div class="dropdown">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Zawodnik 1
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for player in query_results %}
-                    <a class="dropdown-item" href="#" onchange="form.submit()" name="newItem" ,
-                       value="newItem">{{ player }}</a>
+                    <a class="dropdown-item" href="#" onchange="form.submit()" name="new" ,
+                       value={{ player }}>{{ player }}</a>
                 {% endfor %}
             </div>
         </div>
+    <div class="input-group-prepend">
+                <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
+                </button>
+            </div>
     </form>
 
     <form method="post" , action="#">
         {% csrf_token %}
-        {% for item in ls.item_set.all %}
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        {% if item.complete == True %}
-                            <input type="checkbox" , value="clicked" , name="c{{ item.id }}" checked>
-                            {& else %}
-                            <input type="checkbox" , value="clicked" , name="c{{ item.id }}">
-                        {% endif %}
-                    </div>
-                </div>
-                <input type="text" , value="{{ item.text }}" class="form-control">
-            </div>
-        {% endfor %}
-
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika

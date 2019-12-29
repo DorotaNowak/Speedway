@@ -5,7 +5,7 @@ Moje drużyny
 {% endblock %}
 
 {% block content %}
-    {% for td in user.team.all %}
-	    <p><a href="/{{td.id}}">{{td.name}}</a></p>
+    {% for team in user.team.all %}
+	    <p><a href="/{{team.id}}">{{team.name}}</a></p>
     {% endfor %}
 {% endblock %}
