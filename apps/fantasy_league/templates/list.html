@@ -9,44 +9,50 @@
 {% block title %}Wybierz zawodników{% endblock %}
 
 {% block content %}
-    <h2>Nazwa drużyny: {{ ls.name }}</h2>
-    <h2>{{ ls.player1 }}</h2>
-    {% if ls.player1 %}
-        <img src="{% static ls.player1.get_path %}"/>
+    <h2>Nazwa drużyny: {{ team.name }}</h2>
+    <h2>{{ team.player1 }}</h2>
+    {% if team.player1 %}
+        <img src="{% static team.player1.get_path %}"/>
     {% else %}
         <img src="{% static 'photos/players/none.jpg' %}"/>
     {% endif %}
 
+    <form method="post">
+        {% csrf_token %}
+        <select class="form-control" id="optCity" name="city" required>
+            {% for player in all_players %}
+                <option value="{{player.first_name}}">{{player}}</option>
+            {% endfor %}
+        </select>
+        <div class="input-group-prepend">
+            <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
+            </button>
+        </div>
+
+    </form>
+
     <form method="post" , action="#">
         {% csrf_token %}
-
         <div class="dropdown">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Zawodnik 1
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for player in query_results %}
+                {% for player in all_players %}
                     <a class="dropdown-item" href="#" onchange="form.submit()" name="new" ,
-                       value={{ player }}>{{ player }}</a>
+                       value={{ player.first_name }}>{{ player }}</a>
                 {% endfor %}
             </div>
         </div>
-    <div class="input-group-prepend">
-                <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
-                </button>
-            </div>
+
+        <div class="input-group-prepend">
+            <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
+            </button>
+        </div>
     </form>
 
     <form method="post" , action="#">
         {% csrf_token %}
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
-                </button>
-            </div>
-            <input type="text" , name="new">
-        </div>
-
         <button type="submit" , name="save" , value="save" , class="btn btn-success">Zapisz</button>
     </form>
 {% endblock %}

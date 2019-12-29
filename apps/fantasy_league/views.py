@@ -1,5 +1,5 @@
 from .models import Team, Player
-from .forms import CreateTeamForm, ChoosePlayer
+from .forms import CreateTeamForm
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -36,13 +36,13 @@ def create(response):
 @login_required
 def index(response, id):
     team = Team.objects.get(id=id)
-    players = Player.objects.all()  # <Player: Player object (id)>
+    all_players = Player.objects.all()  # <Player: Player object (id)>
 
     if team in response.user.team.all():
         if response.method == "POST":
-            form = ChoosePlayer(response.POST)
+            print("response post")
             if response.POST.get("save"):
-                for item in team.item_set.all():
+                for item in team:
                     if response.POST.get("c" + str(item.id)) == "clicked":
                         item.complete = True
                     else:
@@ -51,11 +51,8 @@ def index(response, id):
                     item.save()
 
             elif response.POST.get("newItem"):
-                if form.is_valid():
-                    print("form is valid")
-                    n = form.cleaned_data["value"]
-                    print(n)
-                txt = response.POST.get("new")
+                print("newItem")
+                txt = response.POST.get("city")
                 print(txt)
                 if txt:
                     pl = Player.objects.filter(first_name=txt)[0]
@@ -66,9 +63,9 @@ def index(response, id):
                 else:
                     print("invalid")
 
-        return render(response, "list.html", {"ls": team, "query_results": players})
+        return render(response, "list.html", {"team": team, "all_players": all_players})
 
-    return render(response, "home.html", {})
+    return render(response, "home.html")
 
 
 @login_required
