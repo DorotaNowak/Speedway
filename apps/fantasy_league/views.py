@@ -30,7 +30,7 @@ def create(response):
         if form.is_valid():
             n = form.cleaned_data["name"]
             t = Team(name=n, budget=10.0, player1=None, player2=None, player3=None, player4=None)
-            t.save()  # dave to database
+            t.save()  # save to database
             response.user.team.add(t)
 
         return HttpResponseRedirect("/%i" % t.id)
@@ -43,13 +43,13 @@ def create(response):
 
 @login_required(redirect_field_name='')
 def index(response, id):
-    ls = Team.objects.get(id=id)
+    team = Team.objects.get(id=id)
     players = Player.objects.all()  # <Player: Player object (id)>
 
-    if ls in response.user.team.all():
+    if team in response.user.team.all():
         if response.method == "POST":
             if response.POST.get("save"):
-                for item in ls.item_set.all():
+                for item in team.item_set.all():
                     if response.POST.get("c" + str(item.id)) == "clicked":
                         item.complete = True
                     else:
@@ -62,14 +62,14 @@ def index(response, id):
 
                 if len(txt) > 2:
                     pl = Player.objects.filter(first_name=txt)[0]
-                    ls.player1 = pl
-                    ls.save()
-                    print(ls)
+                    team.player1 = pl
+                    team.save()
+                    print(team)
                     print(pl)
                 else:
                     print("invalid")
 
-        return render(response, "list.html", {"ls": ls, "query_results": players})
+        return render(response, "list.html", {"ls": team, "query_results": players})
 
     return render(response, "home.html", {})
 

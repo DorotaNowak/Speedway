@@ -14,6 +14,9 @@ class Player(models.Model):
     def __str__(self):
         return self.last_name + ' ' + self.first_name
 
+    def get_path(self):
+        return 'photos/players/' + self.last_name + '_' + self.first_name + '.jpg'
+
 
 # related name  - user can access this by user.team
 class Team(models.Model):

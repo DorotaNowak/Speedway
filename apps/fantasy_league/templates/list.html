@@ -11,25 +11,29 @@
 {% block content %}
     <h2>{{ ls.name }}</h2>
     <h2>{{ ls.player1 }}</h2>
-    <img src="{% static 'photos/players/Kamil_Wieczorek.jpg' %}"/>
-
-     <form method="post" , action="#">
-        {% csrf_token %}
-    <div class="dropdown">
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Zawodnik 1
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% for item in query_results %}
-                <a class="dropdown-item" href="#" onchange="form.submit()" name="newItem" , value="newItem">{{ item }}</a>
-            {% endfor %}
-        </div>
-    </div>
-     </form>
+    {% if ls.player1 %}
+        <img src="{% static ls.player1.get_path %}"/>
+    {% else %}
+        <img src="{% static 'photos/players/none.jpg' %}"/>
+    {% endif %}
 
     <form method="post" , action="#">
         {% csrf_token %}
+        <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Zawodnik 1
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for player in query_results %}
+                    <a class="dropdown-item" href="#" onchange="form.submit()" name="newItem" ,
+                       value="newItem">{{ player }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
 
+    <form method="post" , action="#">
+        {% csrf_token %}
         {% for item in ls.item_set.all %}
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

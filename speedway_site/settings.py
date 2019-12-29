@@ -24,7 +24,7 @@ SECRET_KEY = 'js&in%+qmc1ata=n+ihdya5l=!n0=ss=wlt1irrw!@c2rdm_0a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['speedway-fantasy.herokuapp.com']
+ALLOWED_HOSTS = ['speedway-fantasy.herokuapp.com', '127.0.0.1']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'k.szawlis@gmail.com'
