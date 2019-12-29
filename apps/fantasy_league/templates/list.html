@@ -19,7 +19,8 @@
 
     <form method="post">
         {% csrf_token %}
-        <select class="form-control" id="optCity" name="city" required>
+        <select class="form-control" id="optCity" name="choosenPlayer" required>
+        <option value="None" selected disabled hidden>Zawodnik 1</option>
             {% for player in all_players %}
                 <option value="{{ player.first_name }}">{{ player }}</option>
             {% endfor %}

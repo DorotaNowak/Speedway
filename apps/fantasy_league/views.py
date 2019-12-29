@@ -51,15 +51,11 @@ def index(response, id):
                     item.save()
 
             elif response.POST.get("newItem"):
-                print("newItem")
-                txt = response.POST.get("city")
-                print(txt)
+                txt = response.POST.get("choosenPlayer")
                 if txt:
-                    pl = Player.objects.filter(first_name=txt)[0]
-                    team.player1 = pl
+                    player = Player.objects.filter(first_name=txt)[0]
+                    team.player1 = player
                     team.save()
-                    print(team)
-                    print(pl)
                 else:
                     print("invalid")
 
