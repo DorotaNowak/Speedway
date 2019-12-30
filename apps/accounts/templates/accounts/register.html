@@ -1,15 +1,25 @@
 {% extends "base.html" %}
 {% block title %}Rejestracja{% endblock %}
 {% block content %}
-
-    {% if form.errors %}Your username and password didn't match. Please try again.{% endif %}
+      <div class="login">
+    {% if form.errors %}Nazwa użytkownika już istnieje wprowadź inną nazwę użytkownika lub hasła nie zgadzają się {% endif %}
     <form action="." method="post">{% csrf_token %}
-        <p class="hint-text">Uzupełnij dane.</p>
-        {{ form.as_p }}
+        <h3 class="hint-text">Uzupełnij dane i wejdź do gry!</h3>
+        <input class="form-control" id="{{ form.username.id_for_label }}" maxlength="30"
+                               name="{{ form.username.html_name }}" placeholder="nazwa użytkownika" type="text"/>
+
+         <input class="form-control" id="{{ form.email.html_name }}" maxlength="30"
+                               name="{{ form.email.html_name }}" placeholder="adres email" type="text"/>
+
+        <input class="form-control" id="{{ form.password.html_name }}" maxlength="30"
+                               name="{{ form.password.html_name }}" placeholder="hasło"  type="password"/>
+
+
+        <input class="form-control" id="{{ form.password2.html_name }}" maxlength="30"
+                               name="{{ form.password2.html_name }}" placeholder="powtórz hasło" type="password"/>
+
+
         <button type="submit" class="btn btn-info">Zarejestruj się</button>
     </form>
 
 {% endblock %}
-
-
-
