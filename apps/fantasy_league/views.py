@@ -21,7 +21,7 @@ def create(response):
 
         if form.is_valid():
             name = form.cleaned_data["name"]
-            team = Team(name=name, budget=10.0, player1=None, player2=None, player3=None, player4=None)
+            team = Team(name=name, budget=5.0, player1=None, player2=None, player3=None, player4=None)
             team.save()  # save to database
             response.user.team.add(team)
 
@@ -51,11 +51,58 @@ def index(response, id):
                     item.save()
 
             elif response.POST.get("newItem"):
-                txt = response.POST.get("choosenPlayer")
-                if txt:
-                    player = Player.objects.filter(first_name=txt)[0]
-                    team.player1 = player
-                    team.save()
+                player_id = response.POST.get("choosenPlayer")
+                if player_id:
+                    player = Player.objects.filter(id=player_id)[0]
+                    old_price = 0
+                    if team.player1:
+                        old_price = team.player1.price
+                    if team.budget + old_price >= player.price:
+                        team.player1 = player
+                        team.budget = team.budget - player.price + old_price
+                        team.save()
+                else:
+                    print("invalid")
+
+            elif response.POST.get("newItem2"):
+                player_id = response.POST.get("choosenPlayer")
+                if player_id:
+                    player = Player.objects.filter(id=player_id)[0]
+                    old_price = 0
+                    if team.player2:
+                        old_price = team.player2.price
+                    if team.budget + old_price >= player.price:
+                        team.player2 = player
+                        team.budget = team.budget - player.price + old_price
+                        team.save()
+                else:
+                    print("invalid")
+
+            elif response.POST.get("newItem3"):
+                player_id = response.POST.get("choosenPlayer")
+                if player_id:
+                    player = Player.objects.filter(id=player_id)[0]
+                    old_price = 0
+                    if team.player3:
+                        old_price = team.player3.price
+                    if team.budget + old_price >= player.price:
+                        team.player3 = player
+                        team.budget = team.budget - player.price + old_price
+                        team.save()
+                else:
+                    print("invalid")
+
+            elif response.POST.get("newItem4"):
+                player_id = response.POST.get("choosenPlayer")
+                if player_id:
+                    player = Player.objects.filter(id=player_id)[0]
+                    old_price = 0
+                    if team.player4:
+                        old_price = team.player4.price
+                    if team.budget + old_price >= player.price:
+                        team.player4 = player
+                        team.budget = team.budget - player.price + old_price
+                        team.save()
                 else:
                     print("invalid")
 

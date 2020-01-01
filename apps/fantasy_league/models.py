@@ -9,10 +9,10 @@ class Player(models.Model):
     last_name = models.CharField(max_length=20)
     team = models.CharField(max_length=10)
     nationality = models.CharField(max_length=10)
-    price = models.DecimalField(max_digits=6, decimal_places=3)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return self.last_name + ' ' + self.first_name
+        return self.last_name + ' ' + self.first_name + '    ' +str(self.price)
 
     # return path to player's image
     def get_path(self):
@@ -27,4 +27,4 @@ class Team(models.Model):
     player2 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player2', null=True)
     player3 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player3', null=True)
     player4 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player4', null=True)
-    budget = models.DecimalField(default=10.0, max_digits=6, decimal_places=3)
+    budget = models.DecimalField(default=5.0, max_digits=6, decimal_places=2)
