@@ -9,7 +9,7 @@
 {% block title %}Wybierz zawodników{% endblock %}
 
 {% block content %}
-    <h2>Nazwa drużyny: {{ team.name }} BUDŻET: {{ team.budget }}</h2>
+    <h2>Nazwa drużyny: {{ team.name }} BUDŻET: {{ team.budget }} WYNIK: {{ team.count_score }}</h2>
 
     <h2>{{ team.player1 }}</h2>
     {% if team.player1 %}
@@ -20,8 +20,8 @@
 
     <form method="post">
         {% csrf_token %}
-        <select class="form-control" id="optCity" name="choosenPlayer" required>
-        <option value="None" selected disabled hidden>Zawodnik 1</option>
+        <select class="form-control" id="optCity" name="chosenPlayer" required>
+            <option value="None" selected disabled hidden>Zawodnik 1</option>
             {% for player in all_players %}
                 <option value="{{ player.id }}">{{ player }}</option>
             {% endfor %}
@@ -42,8 +42,8 @@
 
     <form method="post">
         {% csrf_token %}
-        <select class="form-control" id="optCity" name="choosenPlayer" required>
-        <option value="None" selected disabled hidden>Zawodnik 2</option>
+        <select class="form-control" id="optCity" name="chosenPlayer" required>
+            <option value="None" selected disabled hidden>Zawodnik 2</option>
             {% for player in all_players %}
                 <option value="{{ player.id }}">{{ player }}</option>
             {% endfor %}
@@ -63,8 +63,8 @@
 
     <form method="post">
         {% csrf_token %}
-        <select class="form-control" id="optCity" name="choosenPlayer" required>
-        <option value="None" selected disabled hidden>Zawodnik 3</option>
+        <select class="form-control" id="optCity" name="chosenPlayer" required>
+            <option value="None" selected disabled hidden>Zawodnik 3</option>
             {% for player in all_players %}
                 <option value="{{ player.id }}">{{ player }}</option>
             {% endfor %}
@@ -75,7 +75,7 @@
         </div>
     </form>
 
-        <h2>{{ team.player4 }}</h2>
+    <h2>{{ team.player4 }}</h2>
     {% if team.player4 %}
         <img src="{% static team.player4.get_path %}"/>
     {% else %}
@@ -84,8 +84,8 @@
 
     <form method="post">
         {% csrf_token %}
-        <select class="form-control" id="optCity" name="choosenPlayer" required>
-        <option value="None" selected disabled hidden>Zawodnik 4</option>
+        <select class="form-control" id="optCity" name="chosenPlayer" required>
+            <option value="None" selected disabled hidden>Zawodnik 4</option>
             {% for player in all_players %}
                 <option value="{{ player.id }}">{{ player }}</option>
             {% endfor %}

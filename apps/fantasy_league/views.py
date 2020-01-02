@@ -51,7 +51,7 @@ def index(response, id):
                     item.save()
 
             elif response.POST.get("newItem"):
-                player_id = response.POST.get("choosenPlayer")
+                player_id = response.POST.get("chosenPlayer")
                 if player_id:
                     player = Player.objects.filter(id=player_id)[0]
                     old_price = 0
@@ -65,7 +65,7 @@ def index(response, id):
                     print("invalid")
 
             elif response.POST.get("newItem2"):
-                player_id = response.POST.get("choosenPlayer")
+                player_id = response.POST.get("chosenPlayer")
                 if player_id:
                     player = Player.objects.filter(id=player_id)[0]
                     old_price = 0
@@ -79,7 +79,7 @@ def index(response, id):
                     print("invalid")
 
             elif response.POST.get("newItem3"):
-                player_id = response.POST.get("choosenPlayer")
+                player_id = response.POST.get("chosenPlayer")
                 if player_id:
                     player = Player.objects.filter(id=player_id)[0]
                     old_price = 0
@@ -93,7 +93,7 @@ def index(response, id):
                     print("invalid")
 
             elif response.POST.get("newItem4"):
-                player_id = response.POST.get("choosenPlayer")
+                player_id = response.POST.get("chosenPlayer")
                 if player_id:
                     player = Player.objects.filter(id=player_id)[0]
                     old_price = 0
