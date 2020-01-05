@@ -5,102 +5,183 @@
     <link rel="stylesheet" href="{% static 'list.css' %}">
 {% endblock footer_scripts %}
 
-
 {% block title %}Wybierz zawodników{% endblock %}
 
 {% block content %}
-    <h2>Nazwa drużyny: {{ team.name }} BUDŻET: {{ team.budget }} WYNIK: {{ team.count_score }}</h2>
 
-    <h2>{{ team.player1 }}</h2>
-    {% if team.player1 %}
-        <img src="{% static team.player1.get_path %}"/>
-    {% else %}
-        <img src="{% static 'photos/players/none.jpg' %}"/>
-    {% endif %}
-
-    <form method="post">
-        {% csrf_token %}
-        <select class="form-control" id="optCity" name="chosenPlayer" required>
-            <option value="None" selected disabled hidden>Zawodnik 1</option>
-            {% for player in all_players %}
-                <option value="{{ player.id }}">{{ player }}</option>
-            {% endfor %}
-        </select>
-        <div class="input-group-prepend">
-            <button type="submit" , name="newItem" , value="newItem" , class="btn btn-success">Dodaj zawodnika
-            </button>
+    <div class="card-group">
+        <div class="card">
+            <h6>Nazwa drużyny: {{ team.name }}</h6>
         </div>
-    </form>
-
-
-    <h2>{{ team.player2 }}</h2>
-    {% if team.player2 %}
-        <img src="{% static team.player2.get_path %}"/>
-    {% else %}
-        <img src="{% static 'photos/players/none.jpg' %}"/>
-    {% endif %}
-
-    <form method="post">
-        {% csrf_token %}
-        <select class="form-control" id="optCity" name="chosenPlayer" required>
-            <option value="None" selected disabled hidden>Zawodnik 2</option>
-            {% for player in all_players %}
-                <option value="{{ player.id }}">{{ player }}</option>
-            {% endfor %}
-        </select>
-        <div class="input-group-prepend">
-            <button type="submit" , name="newItem2" , value="newItem2" , class="btn btn-success">Dodaj zawodnika
-            </button>
+        <div class="card">
+            <h6>Budżet: {{ team.budget }}</h6>
         </div>
-    </form>
-
-    <h2>{{ team.player3 }}</h2>
-    {% if team.player3 %}
-        <img src="{% static team.player3.get_path %}"/>
-    {% else %}
-        <img src="{% static 'photos/players/none.jpg' %}"/>
-    {% endif %}
-
-    <form method="post">
-        {% csrf_token %}
-        <select class="form-control" id="optCity" name="chosenPlayer" required>
-            <option value="None" selected disabled hidden>Zawodnik 3</option>
-            {% for player in all_players %}
-                <option value="{{ player.id }}">{{ player }}</option>
-            {% endfor %}
-        </select>
-        <div class="input-group-prepend">
-            <button type="submit" , name="newItem3" , value="newItem3" , class="btn btn-success">Dodaj zawodnika
-            </button>
+        <div class="card">
+            <h6>Wynik: {{ team.count_score }}</h6>
         </div>
-    </form>
+    </div>
 
-    <h2>{{ team.player4 }}</h2>
-    {% if team.player4 %}
-        <img src="{% static team.player4.get_path %}"/>
-    {% else %}
-        <img src="{% static 'photos/players/none.jpg' %}"/>
-    {% endif %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        {% if team.player1 %}
+                            <img src="{% static team.player1.get_path %}"/>
+                        {% else %}
+                            <img src="{% static 'photos/players/none.jpg' %}"/>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team.player1.last_name }} {{ team.player1.first_name }}</h5>
+                            <p class="card-text">Ranking {{ team.player1.actual_score }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Cena {{ team.player1.price }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <form method="post">
-        {% csrf_token %}
-        <select class="form-control" id="optCity" name="chosenPlayer" required>
-            <option value="None" selected disabled hidden>Zawodnik 4</option>
-            {% for player in all_players %}
-                <option value="{{ player.id }}">{{ player }}</option>
-            {% endfor %}
-        </select>
-        <div class="input-group-prepend">
-            <button type="submit" , name="newItem4" , value="newItem4" , class="btn btn-success">Dodaj zawodnika
-            </button>
+
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-control" id="optCity" name="chosenPlayer" required>
+                    <option value="None" selected disabled hidden>Zawodnik 1</option>
+                    {% for player in all_players %}
+                        <option value="{{ player.id }}">{{ player }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend">
+                    <button type="submit" , name="newItem" , value="newItem" , class="btn btn-info">Dodaj zawodnika
+                    </button>
+                </div>
+            </form>
         </div>
-    </form>
 
+
+        <div class="col-sm-6">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        {% if team.player2 %}
+                            <img src="{% static team.player2.get_path %}"/>
+                        {% else %}
+                            <img src="{% static 'photos/players/none.jpg' %}"/>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team.player2.last_name }} {{ team.player2.first_name }}</h5>
+                            <p class="card-text">Ranking {{ team.player2.actual_score }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Cena {{ team.player2.price }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-control" id="optCity" name="chosenPlayer" required>
+                    <option value="None" selected disabled hidden>Zawodnik 2</option>
+                    {% for player in all_players %}
+                        <option value="{{ player.id }}">{{ player }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend">
+                    <button type="submit" , name="newItem2" , value="newItem2" , class="btn btn-info">Dodaj zawodnika
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        {% if team.player3 %}
+                            <img src="{% static team.player3.get_path %}"/>
+                        {% else %}
+                            <img src="{% static 'photos/players/none.jpg' %}"/>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team.player3.last_name }} {{ team.player3.first_name }}</h5>
+                            <p class="card-text">Ranking {{ team.player3.actual_score }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Cena {{ team.player3.price }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-control" id="optCity" name="chosenPlayer" required>
+                    <option value="None" selected disabled hidden>Zawodnik 3</option>
+                    {% for player in all_players %}
+                        <option value="{{ player.id }}">{{ player }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend">
+                    <button type="submit" , name="newItem3" , value="newItem3" , class="btn btn-info">Dodaj zawodnika
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        {% if team.player4 %}
+                            <img src="{% static team.player4.get_path %}"/>
+                        {% else %}
+                            <img src="{% static 'photos/players/none.jpg' %}"/>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team.player4.last_name }} {{ team.player4.first_name }}</h5>
+                            <p class="card-text">Ranking {{ team.player4.actual_score }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Cena {{ team.player4.price }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-control" id="optCity" name="chosenPlayer" required>
+                    <option value="None" selected disabled hidden>Zawodnik 4</option>
+                    {% for player in all_players %}
+                        <option value="{{ player.id }}">{{ player }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend">
+                    <button type="submit" , name="newItem4" , value="newItem4" , class="btn btn-info">Dodaj zawodnika
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
 
 
 
     <form method="post" , action="#">
         {% csrf_token %}
-        <button type="submit" , name="save" , value="save" , class="btn btn-success">Zapisz</button>
+        <button type="submit" , name="save" , value="save" , class="btn btn-info">Zapisz</button>
     </form>
 {% endblock %}

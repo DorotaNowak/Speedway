@@ -1,20 +1,29 @@
-.dropdown-menu {
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
+.form-control{
+    margin-top: 10px;
 }
 
-.dropdown {
-    padding-bottom: 20px;
-    padding-top: 5px;
-}
-
-img {
+.playerImage {
     width: 20%;
     border-radius: 8px;
 }
 
-button {
-   color: #00bfbf;
+.btn-info {
+    width: 200px;
+    background-color: #00bfbf;
+    border-color: #00bfbf;
+}
+
+img{
+    width: 100%;
+}
+
+
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-title{
+    font-size: 20px;
 }
 
