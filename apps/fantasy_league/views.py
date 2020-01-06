@@ -1,8 +1,9 @@
-from .models import Team, Player
-from .forms import CreateTeamForm
+from .models import Team, Player, League
+from .forms import CreateTeamForm, CreateLeagueForm
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from datetime import date
 
 
 def home_response(request):
@@ -35,10 +36,11 @@ def create(response):
 
 @login_required
 def index(response, id):
+    today = date.today().strftime('%Y%m%d')
     team = Team.objects.get(id=id)
     all_players = Player.objects.all()  # <Player: Player object (id)>
 
-    if team in response.user.team.all():
+    if team in response.user.team.all() and today != '20200105':
         if response.method == "POST":
             print("response post")
             if response.POST.get("save"):
@@ -114,3 +116,27 @@ def index(response, id):
 @login_required
 def view(request):
     return render(request, "view.html")
+
+
+@login_required
+def leagues(response):
+    print("LEAGUESSSSSSSSSSSSSSSSs")
+    if response.method == "POST":
+        print("leagues")
+        form = CreateLeagueForm(response.POST)
+
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            password = form.cleaned_data["password"]
+            confirm_password = form.cleaned_data["confirm_password"]
+            if password == confirm_password:
+                league = League(name=name, password=password)
+                league.save()
+            else:
+                return render(response, 'leagues.html', {"form":form})
+
+    else:
+        print("empty form")
+        form = CreateLeagueForm()
+
+    return render(response, "leagues.html", {"form": form})

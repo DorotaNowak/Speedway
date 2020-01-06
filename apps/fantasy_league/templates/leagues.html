@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}Ligi{% endblock %}
+{% load static %}
+
+{% block title %}
+    Stwórz drużynę
+{% endblock %}
+
+
 
 {% block content %}
-    <h1>Ligi</h1><br>
-    tutaj będą ligi
+    <h3>Stwórz ligę</h3>
+    <br>
+    <form method="post" action="/leagues/" class="form-group">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button name="zapisz" type="submit" class="btn btn-success"
+                        style="background-color: #00bfbf; border-color: #00bfbf">Stwórz
+                    ligę
+                </button>
+            </div>
+            {{ form}}
+        </div>
+    </form>
 {% endblock %}

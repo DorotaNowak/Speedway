@@ -33,7 +33,7 @@ def accounts_register(request):
             })
             # send activation link to the user
             user.email_user(subject=subject, message=message)
-            return HttpResponse('registered succesfully and activateion sent')   
+            return HttpResponse('Registeres succesfully and activation link was sent.')
     else:
         registerForm = RegistrationForm()
     return render(request, 'accounts/register.html',{'form': registerForm})

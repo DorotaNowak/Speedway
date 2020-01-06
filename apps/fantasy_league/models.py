@@ -42,3 +42,8 @@ class Team(models.Model):
                 print(player.actual_score)
                 self.score = self.score + player.actual_score
         return self.score
+
+
+class League(models.Model):
+    name = models.CharField(max_length=30, unique=True)
+    password = models.CharField(max_length=30)

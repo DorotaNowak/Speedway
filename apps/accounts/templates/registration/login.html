@@ -12,8 +12,6 @@
                 <h4 class="card-title">Speedway</h4>
                 <h6 class="card-subtitle text-muted">Zaloguj się i dołącz do gry!</h6><br>
 
-                {% if form.errors %}Zły login lub hasło. Spróbuj ponownie.{% endif %}
-
                 <form action="{% url 'login' %}" method="post" class="form-signin">
                     {% csrf_token %}
 
@@ -32,6 +30,8 @@
                     <input type="hidden" name="next" value="{{ next }}"/>
                     <button class="btn btn-info" type="submit" value="login">Zaloguj się</button>
                 </form>
+
+                {% if form.errors %}Zły login lub hasło. Spróbuj ponownie.{% endif %}
             </div>
         </div>
     </div>

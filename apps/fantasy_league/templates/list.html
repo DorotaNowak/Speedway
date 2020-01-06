@@ -50,7 +50,9 @@
                 <select class="form-control" id="optCity" name="chosenPlayer" required>
                     <option value="None" selected disabled hidden>Zawodnik 1</option>
                     {% for player in all_players %}
+
                         <option value="{{ player.id }}">{{ player }}</option>
+
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend">

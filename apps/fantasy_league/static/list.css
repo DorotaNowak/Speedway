@@ -23,6 +23,10 @@ img{
     margin-bottom: 10px;
 }
 
+.card-group > .card{
+    background-color: gainsboro;
+}
+
 .card-title{
     font-size: 20px;
 }
