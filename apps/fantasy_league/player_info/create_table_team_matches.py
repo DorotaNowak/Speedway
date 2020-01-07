@@ -35,6 +35,7 @@ for match_number in range(1076, 1200):
         runda = res[2]
         data = res[3]
         data=str(data[0:10]).replace('.','-')
+        data=data[6]+data[7]+data[8]+data[9]+'-'+data[3]+data[4]+'-'+data[0]+data[1]
         data=(runda, i, home_shortcut, away_shortcut, home_score, away_score, data)
         cursor.execute('insert into team_matches values (?,?,?,?,?,?,?)', data)
         sqliteConnection.commit()
