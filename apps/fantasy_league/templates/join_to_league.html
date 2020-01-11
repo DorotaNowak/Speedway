@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}
@@ -10,13 +9,16 @@
 {% block content %}
     <h3>Stwórz ligę</h3>
     <br>
-    <form method="post" action="/leagues/" class="form-group">
+    {% for league in all_leagues %}
+	    <p><a href="/{{league.id}}">{{league.name}}</a></p>
+    {% endfor %}
+    <form method="post" action="/join_to_league/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             {{ form }}
             <div class="input-group-prepend">
                 <button name="zapisz" type="submit" class="btn btn-success"
-                        style="background-color: #00bfbf; border-color: #00bfbf">Stwórz ligę
+                        style="background-color: #00bfbf; border-color: #00bfbf">Dołącz do ligi
                 </button>
             </div>
 

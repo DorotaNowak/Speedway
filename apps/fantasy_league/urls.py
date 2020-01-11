@@ -9,6 +9,7 @@ from .views import view
 from .views import create
 from .views import leagues
 from .views import chosen_league
+from .views import join_to_league
 
 urlpatterns = [
     path('', home_response, name='home'),
@@ -17,6 +18,6 @@ urlpatterns = [
     path('create/', create, name='create'),
     path('view/', view, name='view'),
     path('leagues/', leagues, name='leagues'),
-    path('leagues/<int:id>', chosen_league, name='chosen_league')
-
+    path('leagues/<int:id>', chosen_league, name='chosen_league'),
+    path('join_to_league/',join_to_league)
 ]
