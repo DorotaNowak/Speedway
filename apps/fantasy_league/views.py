@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from datetime import date
+import hashlib
 
 
 def home_response(request):
@@ -120,23 +121,30 @@ def view(request):
 
 @login_required
 def leagues(response):
-    print("LEAGUESSSSSSSSSSSSSSSSs")
     if response.method == "POST":
-        print("leagues")
         form = CreateLeagueForm(response.POST)
 
         if form.is_valid():
             name = form.cleaned_data["name"]
             password = form.cleaned_data["password"]
             confirm_password = form.cleaned_data["confirm_password"]
+
             if password == confirm_password:
-                league = League(name=name, password=password)
+                h = hashlib.new('ripemd160')
+                h.update(bytes(password, encoding='utf-8'))
+
+                league = League(name=name, password=h.hexdigest())
                 league.save()
+                return HttpResponseRedirect("/leagues/%i" % league.id)
             else:
-                return render(response, 'leagues.html', {"form":form})
+                return render(response, 'leagues.html', {"form": form})
 
     else:
-        print("empty form")
         form = CreateLeagueForm()
 
     return render(response, "leagues.html", {"form": form})
+
+
+@login_required
+def chosen_league(response, id):
+    return render(response, 'team_to_league.html')
