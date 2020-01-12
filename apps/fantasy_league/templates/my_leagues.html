@@ -8,4 +8,7 @@ Moje ligi
 {% block content %}
     Tutaj będą wszystkie ligi danego użytkownika.
     Będzie sobie mógł kliknąć w wybraną ligę i zobaczyć ranking.
+    {% for league in leagues %}
+                <a href="/leagues/{{ league.id }}" class="list-group-item"> {{ league }} </a>
+            {% endfor %}
 {% endblock %}

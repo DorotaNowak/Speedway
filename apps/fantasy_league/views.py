@@ -23,9 +23,10 @@ def my_leagues(request):
     path = r'C:\Users\Dorota Nowak\Desktop\Speedway\db2.sqlite3'
     sqliteConnection = sqlite3.connect(path)
     cursor = sqliteConnection.cursor()
-    league_ids = cursor.execute('select league_id from team_league_user where user_id=?', (request.user.id,)).fetchall()
-    print(league_ids)
-    return render(request, 'my_leagues.html')
+    league_ids = cursor.execute('select * from team_league_user where user_id=?', (request.user.id,)).fetchall()
+    leagues = cursor.execute('select id,name from fantasy_league_league where id in (39,12)').fetchall()
+    print(leagues)
+    return render(request, 'my_leagues.html', {"leagues": leagues})
 
 
 @login_required
@@ -126,7 +127,7 @@ def index(response, id):
                 else:
                     print("invalid")
 
-        return render(response, "list.html", {"team": team, "all_players": all_players})
+        return render(response, "team.html", {"team": team, "all_players": all_players})
 
     return render(response, "home.html")
 
@@ -214,4 +215,4 @@ def create_league(response):
 
 @login_required
 def chosen_league(response, id):
-    return render(response, 'team_to_league.html')
+    return render(response, 'league.html')
