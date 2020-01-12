@@ -1,12 +1,35 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block footer_scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock footer_scripts %}
+
 {% block title %}
-Moje drużyny
+    Moje drużyny
 {% endblock %}
 
 {% block content %}
-    {% for team in user.team.all %}
-	    <p> <a href="/{{team.id}}"><button type="button"> {{ team.name }} </button></a></p>
-    {% endfor %}
+    <div class="container">
+        <p>Wpisz nazwę drużyny aby wyszukać:</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Szukaj...">
+        <br>
+        <ul class="list-group" id="myList">
+            {% for team in user.team.all %}
+                <a href="/teams/{{ team.id }}" class="list-group-item"> {{ team.name }} </a>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                let value = $(this).val().toLowerCase();
+                $("#myList a").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 {% endblock %}

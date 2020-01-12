@@ -8,7 +8,7 @@ Dodaj drużyny
     {% for team in user.team.all %}
 	    <p><a href="/{{team.id}}">{{team.name}}</a></p>
     {% endfor %}
-     <form method="post" action="/join-to-league/add-teams-to-league/" class="form-group">
+     <form method="post" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             {{ form }}

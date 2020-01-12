@@ -20,6 +20,11 @@ def after_login_response(request):
 
 @login_required
 def my_leagues(request):
+    path = r'C:\Users\Dorota Nowak\Desktop\Speedway\db2.sqlite3'
+    sqliteConnection = sqlite3.connect(path)
+    cursor = sqliteConnection.cursor()
+    league_ids = cursor.execute('select league_id from team_league_user where user_id=?', (request.user.id,)).fetchall()
+    print(league_ids)
     return render(request, 'my_leagues.html')
 
 
@@ -34,7 +39,7 @@ def create_team(response):
             team.save()  # save to database
             response.user.team.add(team)
 
-        return HttpResponseRedirect("/%i" % team.id)
+        return HttpResponseRedirect("/teams/%i" % team.id)
 
     else:
         form = CreateTeamForm()
@@ -143,9 +148,10 @@ def join_to_league(response):
             h.update(bytes(password, encoding='utf-8'))
 
             if h.hexdigest() == League.objects.get(name=name).password:
-                league_id=League.objects.get(name=name).id
+                league_id = League.objects.get(name=name).id
                 print(league_id)
-                return HttpResponseRedirect(reverse("add-teams-to-league-name"), {"league_id":league_id})
+                return HttpResponseRedirect("/join-to-league/add-teams-to-league/%i" % league_id)
+                # return HttpResponseRedirect(reverse("add-teams-to-league-name"), {"league_id":league_id})
 
         else:
             return render(response, "join_to_league.html")
@@ -155,7 +161,7 @@ def join_to_league(response):
 
 
 @login_required
-def add_teams_to_league(response):
+def add_teams_to_league(response, league_id):
     if response.method == "POST":
         user_teams = response.user.team.all()
         user_team_names = [team.name for team in user_teams]
@@ -163,16 +169,18 @@ def add_teams_to_league(response):
         if form.is_valid():
             name = form.cleaned_data["name"]
             if name in user_team_names:
-                #print(league_id)
-                data=(Team.objects.get(name=name).id,20)
+                data = (Team.objects.get(name=name).id, league_id, Team.objects.get(name=name).user.id)
                 path = r'C:\Users\Dorota Nowak\Desktop\Speedway\db2.sqlite3'
                 sqliteConnection = sqlite3.connect(path)
                 cursor = sqliteConnection.cursor()
-                cursor.execute('insert into team_league values (?,?)', data)
-                sqliteConnection.commit()
-                return HttpResponseRedirect(reverse("add-teams-to-league-name"))
+                try:
+                    cursor.execute('insert into team_league_user values (?,?,?)', data)
+                    sqliteConnection.commit()
+                except sqlite3.IntegrityError:
+                    print('druzyna juz jest w lidze')
+                return HttpResponseRedirect("/join-to-league/add-teams-to-league/%i" % league_id)
         else:
-            return HttpResponseRedirect(reverse("add-teams-to-league-name"))
+            return HttpResponseRedirect("/join-to-league/add-teams-to-league/%i" % league_id)
     else:
         form = AddTeamToLeague()
     return render(response, "add_team_to_league.html", {"form": form})
