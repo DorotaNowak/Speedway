@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 Moje drużyny
@@ -6,6 +7,6 @@ Moje drużyny
 
 {% block content %}
     {% for team in user.team.all %}
-	    <p><a href="/{{team.id}}">{{team.name}}</a></p>
+	    <p> <a href="/{{team.id}}"><button type="button"> {{ team.name }} </button></a></p>
     {% endfor %}
 {% endblock %}

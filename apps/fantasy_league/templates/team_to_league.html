@@ -8,7 +8,17 @@
     <div class="col-md-8">
         <div class="card-body">
             <h5> Wybierz drużyny, które chcesz dodać do ligi: </h5>
+            </div>
+    </div>
+    <form method="post" action="/join_to_league/" class="form-group">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            {{ form }}
+            <div class="input-group-prepend">
+                <button name="zapisz" type="submit" class="btn btn-success"
+                        style="background-color: #00bfbf; border-color: #00bfbf">Dołącz do ligi
+                </button>
+            </div>
 
         </div>
-    </div>
 {% endblock %}

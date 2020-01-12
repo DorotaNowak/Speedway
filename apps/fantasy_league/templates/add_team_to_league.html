@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dodaj drużyny
+{% endblock %}
+
+{% block content %}
+    {% for team in user.team.all %}
+	    <p><a href="/{{team.id}}">{{team.name}}</a></p>
+    {% endfor %}
+     <form method="post" action="/add_teams_to_league/" class="form-group">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            {{ form }}
+                <button name="zapisz" type="submit" class="btn btn-success"
+                        style="background-color: #00bfbf; border-color: #00bfbf"> Dodaj drużynę do ligi
+                </button>
+
+        </div>
+    </form>
+
+
+
+
+{% endblock %}
