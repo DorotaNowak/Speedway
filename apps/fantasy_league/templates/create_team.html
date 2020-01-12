@@ -10,7 +10,7 @@
 {% block content %}
     <h3>Stwórz nową drużynę</h3>
     <br>
-    <form method="post" action="/create-team/" class="form-group">
+    <form method="post" action="/teams/new/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             <div class="input-group-prepend">

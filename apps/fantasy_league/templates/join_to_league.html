@@ -1,4 +1,10 @@
+{% extends "base.html" %}
 {% load static %}
+
+
+{% block footer_scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock footer_scripts %}
 
 {% block title %}
     Dołącz do ligi
@@ -6,10 +12,33 @@
 
 
 {% block content %}
-    {% for league in all_leagues %}
-	    <p><a href="/{{league.id}}">{{league.name}}</a></p>
-    {% endfor %}
-    <form method="post" action="/join-to-league/" class="form-group">
+
+    <div class="container">
+        <p>Wpisz nazwę ligi aby wyszukać:</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Szukaj...">
+        <br>
+        <ul class="list-group" id="myList">
+            {% for league in all_leagues %}
+                <a href="/{{league.id}}" class="list-group-item"> {{ league.name }} </a>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myInput').val('');
+            $("#myInput").on("keyup", function () {
+                let value = $(this).val().toLowerCase();
+                $("#myList a").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+
+    <form method="post" action="/leagues/join/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             {{ form }}

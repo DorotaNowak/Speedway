@@ -24,6 +24,7 @@
 
     <script>
         $(document).ready(function () {
+            $('#myInput').val('');
             $("#myInput").on("keyup", function () {
                 let value = $(this).val().toLowerCase();
                 $("#myList a").filter(function () {

@@ -150,7 +150,7 @@ def join_to_league(response):
             if h.hexdigest() == League.objects.get(name=name).password:
                 league_id = League.objects.get(name=name).id
                 print(league_id)
-                return HttpResponseRedirect("/join-to-league/add-teams-to-league/%i" % league_id)
+                return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
                 # return HttpResponseRedirect(reverse("add-teams-to-league-name"), {"league_id":league_id})
 
         else:
@@ -178,9 +178,9 @@ def add_teams_to_league(response, league_id):
                     sqliteConnection.commit()
                 except sqlite3.IntegrityError:
                     print('druzyna juz jest w lidze')
-                return HttpResponseRedirect("/join-to-league/add-teams-to-league/%i" % league_id)
+                return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
         else:
-            return HttpResponseRedirect("/join-to-league/add-teams-to-league/%i" % league_id)
+            return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
     else:
         form = AddTeamToLeague()
     return render(response, "add_team_to_league.html", {"form": form})
