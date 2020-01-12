@@ -1,18 +1,15 @@
 {% load static %}
 
 {% block title %}
-    Stwórz ligę
+    Dołącz do ligi
 {% endblock %}
 
 
-
 {% block content %}
-    <h3>Stwórz ligę</h3>
-    <br>
     {% for league in all_leagues %}
 	    <p><a href="/{{league.id}}">{{league.name}}</a></p>
     {% endfor %}
-    <form method="post" action="/join_to_league/" class="form-group">
+    <form method="post" action="/join-to-league/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             {{ form }}

@@ -10,7 +10,7 @@
 {% block content %}
     <h3>Stwórz ligę</h3>
     <br>
-    <form method="post" action="/leagues/" class="form-group">
+    <form method="post" action="/create-league/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             {{ form }}
@@ -19,12 +19,6 @@
                         style="background-color: #00bfbf; border-color: #00bfbf">Stwórz ligę
                 </button>
             </div>
-
         </div>
-
-    </a>
     </form>
-
-
-
 {% endblock %}

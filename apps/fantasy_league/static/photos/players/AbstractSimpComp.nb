@@ -1,0 +1,349 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12473,        341]
+NotebookOptionsPosition[     10748,        306]
+NotebookOutlinePosition[     11082,        321]
+CellTagsIndexPosition[     11039,        318]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Abstrakcyjne kompleksy symplicjalne\n",
+ StyleBox["Micha\[LSlash] Lipi\:0144ski 2019",
+  FontSize->9]
+}], "Chapter",
+ CellChangeTimes->{{3.78504287070568*^9, 3.785042901078782*^9}, {
+  3.785062157266509*^9, 3.7850621581450043`*^9}, {3.785064345286599*^9, 
+  3.785064347759652*^9}},ExpressionUUID->"ca55acac-740b-4bda-a4df-\
+f6dcd5ff9cc1"],
+
+Cell[BoxData[
+ RowBox[{"<<", "SimpHom`"}]], "Input",
+ CellChangeTimes->{{3.785042966603454*^9, 3.7850429707046003`*^9}, {
+  3.785770485358965*^9, 3.7857705156324534`*^9}, {3.78581268628856*^9, 
+  3.78581268650342*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"0f57fa17-6dc7-4c18-9611-004e9613e6ee"],
+
+Cell[CellGroupData[{
+
+Cell["Tworzenie abstrakcyjnych kompleks\[OAcute]w symplicjalnych", "Section",
+ CellChangeTimes->{{3.785042920026553*^9, 3.785042942160178*^9}, {
+  3.785064399841034*^9, 
+  3.7850644040659657`*^9}},ExpressionUUID->"9c9ea92f-a6ff-4506-ac42-\
+6cb3f34c9c84"],
+
+Cell["\<\
+Zasada tworzenia abstrakcyjnych kompleks\[OAcute]w symplicjalnych jest \
+identyczne do tworzenia geometrycznych kompleks\[OAcute]w.\
+\>", "Text",
+ CellChangeTimes->{{3.7850644578436527`*^9, 3.785064479598523*^9}, {
+  3.785064896023572*^9, 
+  3.785064944142408*^9}},ExpressionUUID->"b50e67b7-c8d2-4de5-8ecc-\
+158e1720e521"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"complex", "=", 
+   RowBox[{"SimplicialComplex", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "3"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "1"}], "}"}]}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Homology", "[", "complex", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.785042975383697*^9, 3.785042982098679*^9}, {
+   3.785043184380453*^9, 3.785043231699437*^9}, {3.785064908313809*^9, 
+   3.7850649107590303`*^9}, {3.785065149401329*^9, 3.785065152414464*^9}, 
+   3.78577308123941*^9},
+ CellLabel->"In[54]:=",ExpressionUUID->"8e7477cb-cebb-4e86-ba3e-81b6604933f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sklejanie wierzcho\[LSlash]k\[OAcute]w (kompleksy ilorazowe)", "Section",
+ CellChangeTimes->{{3.7850651580081577`*^9, 3.785065168751314*^9}, {
+  3.7857731994047375`*^9, 
+  3.785773206637307*^9}},ExpressionUUID->"cdcf0f85-b14a-4993-9127-\
+74d7010c3cad"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"segment9", "=", 
+   RowBox[{"NSegment", "[", "9", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotGeomComplex", "[", "segment9", "]"}]}], "Input",
+ CellChangeTimes->{{3.78506595124681*^9, 3.7850659684523067`*^9}, {
+  3.785066307294805*^9, 3.7850663114099827`*^9}},
+ CellLabel->"In[56]:=",ExpressionUUID->"3de6632d-b090-4cad-ace4-de243d3f418e"],
+
+Cell[TextData[{
+ "Mo\:017cemy skleja\[CAcute] wierzcho\[LSlash]ki, ale kompleks przestaje by\
+\[CAcute] kompleksem geometrycznym. Jako drugi argument metody ",
+ StyleBox["GlueVertices",
+  FontWeight->"Bold"],
+ " podajemy grupy wierzcho\[LSlash]k\[OAcute]w, kt\[OAcute]re powinny by\
+\[CAcute] sklejone do jednego wierzcho\[LSlash]ka."
+}], "Text",
+ CellChangeTimes->{{3.7850660679067497`*^9, 3.7850661239793863`*^9}, {
+  3.785066176212523*^9, 
+  3.785066231096488*^9}},ExpressionUUID->"18aa988f-2af2-49c7-ae9b-\
+f7408f91c53e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"circ2", "=", " ", 
+   RowBox[{"GlueVertices", "[", 
+    RowBox[{"segment9", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "6", ",", "9"}], "}"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Homology", "[", "circ2", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.785066022158334*^9, 3.7850660656245527`*^9}, {
+   3.785066126981142*^9, 3.785066161927788*^9}, {3.785066289210693*^9, 
+   3.785066334450238*^9}, 3.7857730954966497`*^9},
+ CellLabel->"In[60]:=",ExpressionUUID->"a3b8d544-23c1-4a97-ac7b-8b1995de8151"],
+
+Cell[TextData[{
+ "Metod\:0105 ",
+ StyleBox["GetToplexes",
+  FontWeight->"Bold"],
+ " mo\:017cemy podejrze\[CAcute], jakie sympleksy powsta\[LSlash]y po \
+sklejeniu."
+}], "Text",
+ CellChangeTimes->{{3.785066255154777*^9, 
+  3.785066282577931*^9}},ExpressionUUID->"fe954d71-5a50-4a51-957a-\
+e9f663f03723"],
+
+Cell[BoxData[
+ RowBox[{"GetToplexes", "[", "circ2", "]"}]], "Input",
+ CellChangeTimes->{{3.785066380003027*^9, 3.7850663878949623`*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"45f68e43-6320-4b8f-ab39-224360926068"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kompleksy z chmur punkt\[OAcute]w", "Section",
+ CellChangeTimes->{{3.7857733684361076`*^9, 
+  3.7857733770845633`*^9}},ExpressionUUID->"8d1a9669-0b27-487a-adb7-\
+ce1f91a87b4e"],
+
+Cell[BoxData[{
+ RowBox[{"SeedRandom", "[", "0", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sample2d", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{"10", ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "2"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"sample2d", ",", 
+   RowBox[{"AspectRatio", "\[Rule]", "1"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.785066853693522*^9, 3.7850668716776743`*^9}, {
+  3.7850669096182127`*^9, 3.785067010302637*^9}, {3.785067041087083*^9, 
+  3.785067053732341*^9}, {3.785067091193098*^9, 3.785067097983182*^9}},
+ CellLabel->"In[70]:=",ExpressionUUID->"a6c47ae1-a175-4b78-b9cf-1a67ef62d55d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "=", "3.5"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"wygeneruj", " ", "wszystkie", " ", "1"}], "-", "sympleksy"}], 
+    ",", " ", 
+    RowBox[{
+     RowBox[{"tj", ".", " ", "odcinki"}], " ", "mi\:0119dzy", " ", 
+     "punktami"}], ",", " ", 
+    RowBox[{"nie", " ", "wi\:0119ksze", " ", "ni\:017c", " ", "r"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"toplexes", "=", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Subsets", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", "n", "]"}], ",", 
+        RowBox[{"{", "2", "}"}]}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"First", "@", "#"}], "]"}], "]"}], "-", 
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"Last", "@", "#"}], "]"}], "]"}]}], "]"}], "\[LessEqual]",
+         "r"}], "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"wygeneruj", " ", "wszystkie", " ", "2"}], "-", "sympleksy"}], 
+    ",", " ", 
+    RowBox[{
+     RowBox[{"tj", ".", " ", "tr\[OAcute]jk\:0105ty"}], " ", "rozpi\:0119te", 
+     " ", "na", " ", "punktach"}], ",", " ", 
+    RowBox[{
+    "gdzie", " ", "ka\:017cda", " ", "kraw\:0119d\:017a", " ", "jest", " ", 
+     "nie", " ", "d\[LSlash]u\:017csza", " ", "ni\:017c", " ", "r"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"toplexes", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Subsets", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", "n", "]"}], ",", 
+       RowBox[{"{", "3", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "-", 
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], 
+        "\[LessEqual]", "r"}], "&&", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "-", 
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}]}], "]"}], 
+        "\[LessEqual]", "r"}], "&&", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}], "-", 
+          RowBox[{"sample2d", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}]}], "]"}], 
+        "\[LessEqual]", "r"}]}], "&"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vertices", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", "v", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", 
+       RowBox[{"Range", "[", "n", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coordinates", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"v", "\[Rule]", 
+       RowBox[{"sample2d", "[", 
+        RowBox[{"[", "v", "]"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"v", ",", 
+        RowBox[{"Range", "[", "n", "]"}]}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"geom", "=", 
+   RowBox[{"GeomSimplicialComplex", "[", 
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{"vertices", ",", "toplexes"}], "]"}], ",", "coordinates"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotGeomComplex", "[", "geom", "]"}]}], "Input",
+ CellChangeTimes->{{3.785067105874262*^9, 3.785067242017251*^9}, {
+   3.785067282749681*^9, 3.785067357756962*^9}, 3.785067399417889*^9, {
+   3.785067435887113*^9, 3.785067557580194*^9}, {3.7857734689151607`*^9, 
+   3.7857734874269876`*^9}, {3.785773525615156*^9, 3.7857735328475304`*^9}, {
+   3.785773619498872*^9, 
+   3.7857737659005985`*^9}},ExpressionUUID->"b00a3c27-2612-495a-a0f1-\
+eeeead1fd13c"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.785071592082419*^9, 
+  3.785071608750681*^9}},ExpressionUUID->"c6d525c9-8c54-499f-9544-\
+e6e88bce9b76"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{958, 1028},
+WindowMargins->{{1, Automatic}, {19, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 356, 8, 86, "Chapter",ExpressionUUID->"ca55acac-740b-4bda-a4df-f6dcd5ff9cc1"],
+Cell[939, 32, 296, 5, 31, "Input",ExpressionUUID->"0f57fa17-6dc7-4c18-9611-004e9613e6ee"],
+Cell[CellGroupData[{
+Cell[1260, 41, 254, 4, 68, "Section",ExpressionUUID->"9c9ea92f-a6ff-4506-ac42-6cb3f34c9c84"],
+Cell[1517, 47, 332, 7, 35, "Text",ExpressionUUID->"b50e67b7-c8d2-4de5-8ecc-158e1720e521"],
+Cell[1852, 56, 763, 19, 55, "Input",ExpressionUUID->"8e7477cb-cebb-4e86-ba3e-81b6604933f1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2652, 80, 258, 4, 68, "Section",ExpressionUUID->"cdcf0f85-b14a-4993-9127-74d7010c3cad"],
+Cell[2913, 86, 385, 7, 55, "Input",ExpressionUUID->"3de6632d-b090-4cad-ace4-de243d3f418e"],
+Cell[3301, 95, 525, 11, 58, "Text",ExpressionUUID->"18aa988f-2af2-49c7-ae9b-f7408f91c53e"],
+Cell[3829, 108, 685, 17, 55, "Input",ExpressionUUID->"a3b8d544-23c1-4a97-ac7b-8b1995de8151"],
+Cell[4517, 127, 302, 9, 35, "Text",ExpressionUUID->"fe954d71-5a50-4a51-957a-e9f663f03723"],
+Cell[4822, 138, 215, 3, 31, "Input",ExpressionUUID->"45f68e43-6320-4b8f-ab39-224360926068"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5074, 146, 182, 3, 68, "Section",ExpressionUUID->"8d1a9669-0b27-487a-adb7-ce1f91a87b4e"],
+Cell[5259, 151, 751, 16, 101, "Input",ExpressionUUID->"a6c47ae1-a175-4b78-b9cf-1a67ef62d55d"],
+Cell[6013, 169, 4552, 128, 331, "Input",ExpressionUUID->"b00a3c27-2612-495a-a0f1-eeeead1fd13c"],
+Cell[10568, 299, 152, 3, 31, "Input",ExpressionUUID->"c6d525c9-8c54-499f-9544-e6e88bce9b76"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
