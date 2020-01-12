@@ -6,7 +6,6 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from datetime import date
 import hashlib
-import sqlite3
 
 
 def home_response(request):
@@ -20,12 +19,7 @@ def after_login_response(request):
 
 @login_required
 def my_leagues(request):
-    path = r'C:\Users\Dorota Nowak\Desktop\Speedway\db2.sqlite3'
-    sqliteConnection = sqlite3.connect(path)
-    cursor = sqliteConnection.cursor()
-    league_ids = cursor.execute('select * from team_league_user where user_id=?', (request.user.id,)).fetchall()
-    leagues = cursor.execute('select id,name from fantasy_league_league where id in (39,12)').fetchall()
-    print(leagues)
+    leagues = League.objects.filter(users__id=request.user.id)
     return render(request, 'my_leagues.html', {"leagues": leagues})
 
 
@@ -61,7 +55,6 @@ def index(response, id):
 
     if team in response.user.team.all() and today != '20200105':
         if response.method == "POST":
-            print("response post")
             if response.POST.get("save"):
                 for item in team:
                     if response.POST.get("c" + str(item.id)) == "clicked":
@@ -126,6 +119,8 @@ def index(response, id):
                         team.save()
                 else:
                     print("invalid")
+            team.score = team.count_score()
+            team.save()
 
         return render(response, "team.html", {"team": team, "all_players": all_players})
 
@@ -149,7 +144,9 @@ def join_to_league(response):
             h.update(bytes(password, encoding='utf-8'))
 
             if h.hexdigest() == League.objects.get(name=name).password:
-                league_id = League.objects.get(name=name).id
+                league = League.objects.get(name=name)
+                league_id = league.id
+                league.users.add(response.user)
                 print(league_id)
                 return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
                 # return HttpResponseRedirect(reverse("add-teams-to-league-name"), {"league_id":league_id})
@@ -170,15 +167,8 @@ def add_teams_to_league(response, league_id):
         if form.is_valid():
             name = form.cleaned_data["name"]
             if name in user_team_names:
-                data = (Team.objects.get(name=name).id, league_id, Team.objects.get(name=name).user.id)
-                path = r'C:\Users\Dorota Nowak\Desktop\Speedway\db2.sqlite3'
-                sqliteConnection = sqlite3.connect(path)
-                cursor = sqliteConnection.cursor()
-                try:
-                    cursor.execute('insert into team_league_user values (?,?,?)', data)
-                    sqliteConnection.commit()
-                except sqlite3.IntegrityError:
-                    print('druzyna juz jest w lidze')
+                league = League.objects.get(id=league_id)
+                league.teams.add(Team.objects.get(name=name))
                 return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
         else:
             return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
@@ -203,6 +193,7 @@ def create_league(response):
 
                 league = League(name=name, password=h.hexdigest())
                 league.save()
+                league.users.add(response.user)
                 return HttpResponseRedirect(reverse('test'))
             else:
                 return render(response, 'create_league.html', {"form": form})
@@ -215,4 +206,6 @@ def create_league(response):
 
 @login_required
 def chosen_league(response, id):
-    return render(response, 'league.html')
+    league = League.objects.get(id=id)
+    teams_in_league = Team.objects.filter(league=id).order_by('score').reverse()
+    return render(response, 'league.html', {"teams": teams_in_league, "league": league})

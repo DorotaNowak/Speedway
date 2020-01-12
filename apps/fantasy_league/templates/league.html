@@ -5,5 +5,9 @@
     Stwórz ligę
 {% endblock %}
 {% block content %}
-   tutaj wyświetlimy ranking wszystkich drużyn które sa w lidze
+    Ranking drużyn w lidze {{ league.name }}:
+    {% for team in teams %}
+        <a href="/teams/{{ team.id }}"
+           class="list-group-item"> {{ team.name }} {{ team.count_score }} {{ team.user.username }}</a>
+    {% endfor %}
 {% endblock %}

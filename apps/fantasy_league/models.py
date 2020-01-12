@@ -45,5 +45,7 @@ class Team(models.Model):
 
 
 class League(models.Model):
+    teams = models.ManyToManyField(Team)
+    users = models.ManyToManyField(User)
     name = models.CharField(max_length=30, unique=True)
     password = models.CharField(max_length=30)
