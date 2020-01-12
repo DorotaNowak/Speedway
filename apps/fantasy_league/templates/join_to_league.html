@@ -19,7 +19,7 @@
         <br>
         <ul class="list-group" id="myList">
             {% for league in all_leagues %}
-                <a href="/{{league.id}}" class="list-group-item"> {{ league.name }} </a>
+                <li class="list-group-item"> {{ league.name }} </li>
             {% endfor %}
         </ul>
     </div>
@@ -30,7 +30,7 @@
             $('#myInput').val('');
             $("#myInput").on("keyup", function () {
                 let value = $(this).val().toLowerCase();
-                $("#myList a").filter(function () {
+                $("#myList li").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });

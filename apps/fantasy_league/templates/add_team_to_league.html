@@ -25,7 +25,8 @@
     </form>
 
     {% for team in user.team.all %}
-        <p><a href="/{{ team.id }}">{{ team.name }}</a></p>
+
+        <p><a href="/teams/{{ team.id }}" class="list-group-item">{{ team.name }}</a></p>
     {% endfor %}
 
 {% endblock %}
