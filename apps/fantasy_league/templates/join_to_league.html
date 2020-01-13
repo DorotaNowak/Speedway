@@ -4,6 +4,7 @@
 
 {% block footer_scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'join_to_league.css' %}">
 {% endblock footer_scripts %}
 
 {% block title %}
@@ -12,7 +13,7 @@
 
 
 {% block content %}
-
+    <div class="join-leagues-wrapper">
     <div class="container">
         <p>Wpisz nazwę ligi aby wyszukać:</p>
         <input class="form-control" id="myInput" type="text" placeholder="Szukaj...">
@@ -22,7 +23,8 @@
                 <li class="list-group-item"> {{ league.name }} </li>
             {% endfor %}
         </ul>
-    </div>
+     </div>
+     </div>
 
 
     <script>
