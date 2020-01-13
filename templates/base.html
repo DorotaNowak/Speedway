@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     {% block footer_scripts %}
     {% endblock footer_scripts %}
+    <script src="https://kit.fontawesome.com/32fe69e3d2.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
@@ -16,30 +18,74 @@
             integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'menu.css' %}">
+    <style>
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            color: #00bfbf;
+
+        }
+    </style>
     <title>{% block title %}Speedway{% endblock %}</title>
 </head>
 
 <body>
-<!-- Side navigation -->
-<div class="sidenav">
-    <a href="/teams">Moje drużyny</a>
-    <a href="/teams/new">Stwórz drużynę</a>
-    <a href="/leagues">Moje ligi</a>
-    <a href="/leagues/new">Stwórz ligę</a>
-    <a href="/leagues/join">Dołącz do ligi</a>
-    <a href="{% url 'logout' %}">Wyloguj się</a>
+<div class="header">
+    <div class="icons">
+        <div class="icon">
+            <a href="https://www.instagram.com/speedwayekstraliga/?fbclid=IwAR0VNWrDQoXeZzm0t6nNFIr2xZ71_Xty-90mCmai4xjrX4IrrZLH2O-nn1o"><i
+                    class="fab fa-instagram" style="color: white"></i></a>
+        </div>
+        <div class="icon">
+            <a href="https://www.facebook.com/speedwayekstraliga/"> <i class="fab fa-facebook-f"
+                                                                       style="color: white"></i></a>
+        </div>
+        <div class="icon">
+            <a href="https://twitter.com/EkstraligaTV?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                    class="fab fa-twitter" style="color:white;"></i></a>
+        </div>
+    </div>
+    <h1>Fantasy Euroleague</h1>
+</div>
+<div class="hline-bottom"></div>
+<div class="navigation">
+    <ul>
+        <li><a href="/teams">Moje drużyny</a></li>
+        <li><a href="/teams/new">Stwórz drużynę</a></li>
+        <li><a href="/leagues">Moje ligi</a></li>
+        <li><a href="/leagues/new">Stwórz ligę</a></li>
+        <li><a href="/leagues/join">Dołącz do ligi</a></li>
+        <li style="float:right"><a href="{% url 'logout' %}">Wyloguj się</a></li>
+    </ul>
 </div>
 
 <!-- Page content -->
 <div class="main">
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <h1 class="mt-2">Fantasy Speedway</h1>
-            <hr class="mt-0 mb-4">
             {% block content %}
             {% endblock %}
-        </div>
-    </div>
+</div>
+<div class="footer">
+Footer
 </div>
 </body>
 </html>
