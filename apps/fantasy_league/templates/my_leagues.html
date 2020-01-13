@@ -1,13 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'leagues.css' %}">
+{% endblock footer_scripts %}
 {% block title %}
 Moje ligi
 {% endblock %}
 
 {% block content %}
+    <div class="leagues-wrapper">
+     <div class="container">
     Twoje ligi:
+
     {% for league in leagues %}
                 <a href="/leagues/{{ league.id }}" class="list-group-item"> {{ league.name }} </a>
             {% endfor %}
+     </div>
+     </div>
 {% endblock %}

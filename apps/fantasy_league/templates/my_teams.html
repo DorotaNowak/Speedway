@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'teams.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 {% endblock footer_scripts %}
 
@@ -10,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+    <div class="teams-wrapper">
     <div class="container">
         <p>Wpisz nazwę drużyny aby wyszukać:</p>
         <input class="form-control" id="myInput" type="text" placeholder="Szukaj...">
@@ -20,7 +23,7 @@
             {% endfor %}
         </ul>
     </div>
-
+</div>
 
     <script>
         $(document).ready(function () {

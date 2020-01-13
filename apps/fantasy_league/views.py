@@ -9,7 +9,7 @@ import hashlib
 
 
 def home_response(request):
-    return render(request, 'login.html')
+    return render(request, 'join_game.html')
 
 
 @login_required

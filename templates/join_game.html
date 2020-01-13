@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'join_game.css' %}">
+{% endblock footer_scripts %}
+{% block title %}Speedway{% endblock %}
+
+{% block content %}
+    <div class="login-wrapper">
+        <div class="login">
+            <a href="accounts/login" class="btn btn-info">Zaloguj się</a><br>
+            <a href="accounts/register" class="btn btn-info">Zarejestruj się</a>
+        </div>
+    </div>
+{% endblock %}
