@@ -40,11 +40,9 @@
             text-decoration: none;
         }
 
-
         /* Change the link color to #111 (black) on hover */
         li a:hover {
             color: #00bfbf;
-
 
         }
 
@@ -53,7 +51,7 @@
 </head>
 
 <body>
-<div class="header">
+<header>
     <div class="icons">
         <div class="icon">
             <a href="https://www.instagram.com/speedwayekstraliga/?fbclid=IwAR0VNWrDQoXeZzm0t6nNFIr2xZ71_Xty-90mCmai4xjrX4IrrZLH2O-nn1o"><i
@@ -68,11 +66,13 @@
                     class="fab fa-twitter" style="color:white;"></i></a>
         </div>
     </div>
-    <h1><strong> FANTASY SPEEDWAY</strong></h1>
-</div>
+    <div class="header-text">
+        <h1><strong> FANTASY SPEEDWAY</strong></h1>
+    </div>
+</header>
 <div class="hline-bottom"></div>
 <div class="navigation">
-    <ul>
+    <ul id="myMenu">
         <li><a href="/teams">Moje drużyny</a></li>
         <li><a href="/teams/new">Stwórz drużynę</a></li>
         <li><a href="/leagues">Moje ligi</a></li>
@@ -82,13 +82,14 @@
     </ul>
 </div>
 
+
 <!-- Page content -->
 <div class="main">
-            {% block content %}
-            {% endblock %}
+    {% block content %}
+    {% endblock %}
 </div>
-<div class="footer">
-Footer
-</div>
+<footer>
+    Footer
+</footer>
 </body>
 </html>

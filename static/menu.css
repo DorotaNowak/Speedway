@@ -7,11 +7,19 @@
     margin: 5px;
 }
 
+.header-text{
+     margin: auto;
+}
+
 .navigation ul {
     padding-left: 160px;
 }
 
-.header {
+.active {
+  color: #00bfbf;
+}
+
+header {
     padding: 20px 10px;
     text-align: center;
     background-color: black;
@@ -19,19 +27,26 @@
     font-size: 30px;
 }
 
-.footer {
-    position: fixed;
+footer {
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
     color: white;
     text-align: center;
     padding: 20px 10px;
-    background-color: black;
+    background-color: #00bfbf;
     height: 60px;
     font-size: 20px;
+    margin-top: auto;
+    clear: both;
 }
 
+html, body{ height:100%; margin:0; }
+body{
+  display:flex;
+  flex-direction:column;
+}
 
 /* Style page content */
 .main {
