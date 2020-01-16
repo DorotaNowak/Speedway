@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock footer_scripts %}
+
 {% block title %}
     Home
 {% endblock %}
 {% block content %}
-    <h4>Witaj w żużlowej lidze fantasy!
-        Stwórz swoją drużynę, dołącz do ligi i ścigaj się ze swoimi znajomymi!</h4>
+    <div class="content-wrapper">
+        <h2>Witaj w żużlowej lidze fantasy!</h2>
+        <h4>Stwórz swoją drużynę, dołącz do ligi i ścigaj się ze swoimi znajomymi!</h4>
+    </div>
 {% endblock %}

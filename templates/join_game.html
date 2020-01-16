@@ -3,14 +3,31 @@
 
 {% block footer_scripts %}
     <link rel="stylesheet" href="{% static 'join_game.css' %}">
+    <style>
+        .login-wrapper {
+            height: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .login {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
 {% endblock footer_scripts %}
+
 {% block title %}Speedway{% endblock %}
 
 {% block content %}
     <div class="login-wrapper">
         <div class="login">
-            <a href="accounts/login" class="btn btn-info">Zaloguj się</a><br>
-            <a href="accounts/register" class="btn btn-info">Zarejestruj się</a>
+            <a href="accounts/login" class="btn btn-info">ZALOGUJ SIĘ</a><br>
+            <a href="accounts/register" class="btn btn-info">ZAREJESTRUJ SIĘ</a>
         </div>
     </div>
 {% endblock %}

@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'create_league.css' %}">
+{% endblock footer_scripts %}
+
 {% block title %}
     Stwórz ligę
 {% endblock %}
 
 
 {% block content %}
-    <h3>Stwórz ligę</h3>
+    <div class="content-wrapper">
+    <h3>Stwórz nową ligę</h3>
     <br>
     <form method="post" action="/leagues/new/" class="form-group">
         {% csrf_token %}
@@ -41,4 +47,5 @@
 
         </div>
     </form>
+    </div>
 {% endblock %}
