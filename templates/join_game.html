@@ -2,15 +2,19 @@
 {% load static %}
 
 {% block footer_scripts %}
-    <link rel="stylesheet" href="{% static 'join_game.css' %}">
     <style>
         .login-wrapper {
+            background: #cccccc url('/static/grand.jpg') no-repeat center;
+            background-size: cover;
+            margin: auto;
             height: 600px;
             text-align: center;
             position: relative;
         }
 
         .login {
+            display: flex;
+            float: none;
             margin: 0;
             position: absolute;
             top: 50%;

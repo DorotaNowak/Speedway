@@ -34,7 +34,7 @@ def create_team(response):
             team.save()  # save to database
             response.user.team.add(team)
 
-        return HttpResponseRedirect("/teams/%i" % team.id)
+            return HttpResponseRedirect("/teams/%i" % team.id)
 
     else:
         form = CreateTeamForm()
@@ -51,7 +51,7 @@ def my_teams(request):
 def index(response, id):
     today = date.today().strftime('%Y%m%d')
     team = Team.objects.get(id=id)
-    exclude_players=[]
+    exclude_players = []
     if team.player1 is not None:
         exclude_players.append(team.player1.id)
     if team.player2 is not None:
@@ -61,19 +61,10 @@ def index(response, id):
     if team.player4 is not None:
         exclude_players.append(team.player4.id)
 
-    all_players=Player.objects.exclude(pk__in=exclude_players)
+    all_players = Player.objects.exclude(pk__in=exclude_players)
     if team in response.user.team.all() and today != '20200117':
         if response.method == "POST":
-            if response.POST.get("save"):
-                for item in team:
-                    if response.POST.get("c" + str(item.id)) == "clicked":
-                        item.complete = True
-                    else:
-                        item.complete = False
-
-                    item.save()
-
-            elif response.POST.get("newItem"):
+            if response.POST.get("newItem"):
                 player_id = response.POST.get("chosenPlayer")
                 if player_id:
                     player = Player.objects.filter(id=player_id)[0]
@@ -81,12 +72,12 @@ def index(response, id):
                     if team.player1:
                         old_price = team.player1.price
                         old_player_id = team.player1.id
-                    elif team.budget + old_price >= player.price:
+                    if team.budget + old_price >= player.price:
                         team.player1 = player
                         team.budget = team.budget - player.price + old_price
                         team.save()
                         exclude_players.append(player.id)
-                        all_players=Player.objects.exclude(pk__in=exclude_players)
+                        all_players = Player.objects.exclude(pk__in=exclude_players)
                     else:
                         print('aaaaaa')
                 else:
@@ -172,7 +163,6 @@ def join_to_league(response):
                 league.users.add(response.user)
                 print(league_id)
                 return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
-                # return HttpResponseRedirect(reverse("add-teams-to-league-name"), {"league_id":league_id})
 
         else:
             return render(response, "join_to_league.html")
