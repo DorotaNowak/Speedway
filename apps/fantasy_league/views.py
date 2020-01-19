@@ -1,6 +1,6 @@
 from .models import Team, Player, League
 from .forms import CreateTeamForm, CreateLeagueForm, JoinLeagueForm, AddTeamToLeague
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -30,7 +30,7 @@ def create_team(response):
 
         if form.is_valid():
             name = form.cleaned_data["name"]
-            team = Team(name=name, budget=5.0, player1=None, player2=None, player3=None, player4=None)
+            team = Team(name=name, player1=None, player2=None, player3=None, player4=None)
             team.save()  # save to database
             response.user.team.add(team)
 
@@ -51,9 +51,18 @@ def my_teams(request):
 def index(response, id):
     today = date.today().strftime('%Y%m%d')
     team = Team.objects.get(id=id)
-    all_players = Player.objects.all()  # <Player: Player object (id)>
+    exclude_players=[]
+    if team.player1 is not None:
+        exclude_players.append(team.player1.id)
+    if team.player2 is not None:
+        exclude_players.append(team.player2.id)
+    if team.player3 is not None:
+        exclude_players.append(team.player3.id)
+    if team.player4 is not None:
+        exclude_players.append(team.player4.id)
 
-    if team in response.user.team.all() and today != '20200105':
+    all_players=Player.objects.exclude(pk__in=exclude_players)
+    if team in response.user.team.all() and today != '20200117':
         if response.method == "POST":
             if response.POST.get("save"):
                 for item in team:
@@ -71,10 +80,15 @@ def index(response, id):
                     old_price = 0
                     if team.player1:
                         old_price = team.player1.price
-                    if team.budget + old_price >= player.price:
+                        old_player_id = team.player1.id
+                    elif team.budget + old_price >= player.price:
                         team.player1 = player
                         team.budget = team.budget - player.price + old_price
                         team.save()
+                        exclude_players.append(player.id)
+                        all_players=Player.objects.exclude(pk__in=exclude_players)
+                    else:
+                        print('aaaaaa')
                 else:
                     print("invalid")
 
@@ -85,10 +99,13 @@ def index(response, id):
                     old_price = 0
                     if team.player2:
                         old_price = team.player2.price
+                        old_player_id = team.player2.id
                     if team.budget + old_price >= player.price:
                         team.player2 = player
                         team.budget = team.budget - player.price + old_price
                         team.save()
+                        exclude_players.append(player.id)
+                        all_players = Player.objects.exclude(pk__in=exclude_players)
                 else:
                     print("invalid")
 
@@ -99,10 +116,13 @@ def index(response, id):
                     old_price = 0
                     if team.player3:
                         old_price = team.player3.price
+                        old_player_id = team.player3.id
                     if team.budget + old_price >= player.price:
                         team.player3 = player
                         team.budget = team.budget - player.price + old_price
                         team.save()
+                        exclude_players.append(player.id)
+                        all_players = Player.objects.exclude(pk__in=exclude_players)
                 else:
                     print("invalid")
 
@@ -113,10 +133,13 @@ def index(response, id):
                     old_price = 0
                     if team.player4:
                         old_price = team.player4.price
+                        old_player_id = team.player4.id
                     if team.budget + old_price >= player.price:
                         team.player4 = player
                         team.budget = team.budget - player.price + old_price
                         team.save()
+                        exclude_players.append(player.id)
+                        all_players = Player.objects.exclude(pk__in=exclude_players)
                 else:
                     print("invalid")
             team.score = team.count_score()

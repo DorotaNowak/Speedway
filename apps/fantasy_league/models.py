@@ -7,16 +7,11 @@ class Player(models.Model):
     last_name = models.CharField(max_length=20)
     team = models.CharField(max_length=10)
     nationality = models.CharField(max_length=10)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.IntegerField()
     actual_score = models.IntegerField(default=0)
-    before_play = models.BooleanField(default=True)
-    actual_play = models.BooleanField(default=False)
-    after_play = models.BooleanField(default=False)
 
     def __str__(self):
-        if self.actual_score == 0 and self.before_play == True:
-            self.actual_score = '-'
-        return self.last_name + ' ' + self.first_name + '    ' + str(self.price) + '    ' + str(self.actual_score)
+        return self.last_name + ' ' + self.first_name + '    ' + 'cena:' +str(self.price) + '    ' + 'sredni wynik:'+str(self.actual_score)
 
     # return path to player's image
     def get_path(self):
@@ -31,7 +26,7 @@ class Team(models.Model):
     player2 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player2', null=True)
     player3 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player3', null=True)
     player4 = models.ForeignKey(Player, on_delete=models.DO_NOTHING, related_name='player4', null=True)
-    budget = models.DecimalField(default=5.0, max_digits=6, decimal_places=2)
+    budget = models.IntegerField(default=500)
     score = models.IntegerField(default=0)
 
     def count_score(self):
@@ -47,5 +42,5 @@ class Team(models.Model):
 class League(models.Model):
     teams = models.ManyToManyField(Team)
     users = models.ManyToManyField(User)
-    name = models.CharField(max_length=30, unique=True)
-    password = models.CharField(max_length=30)
+    name = models.CharField(max_length=1000, unique=True)
+    password = models.CharField(max_length=1000)

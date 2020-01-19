@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView
 from django.views.generic import TemplateView
+from django.views.generic import TemplateView
+
 
 urlpatterns = [
     path('', include('apps.fantasy_league.urls')),

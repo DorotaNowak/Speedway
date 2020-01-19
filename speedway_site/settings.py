@@ -24,7 +24,7 @@ SECRET_KEY = 'js&in%+qmc1ata=n+ihdya5l=!n0=ss=wlt1irrw!@c2rdm_0a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['speedway-fantasy.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['speedway-fantasy.herokuapp.com', '127.0.0.1','[*]']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'k.szawlis@gmail.com'
@@ -82,11 +82,14 @@ WSGI_APPLICATION = 'speedway_site.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db2.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'mypass',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
