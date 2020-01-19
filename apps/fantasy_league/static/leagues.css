@@ -1,3 +1,9 @@
 .leagues-wrapper{
     padding: 40px 400px 40px 0;
 }
+
+.league-header{
+    padding: 30px;
+    color: red;
+    margin-top: 20px;
+}

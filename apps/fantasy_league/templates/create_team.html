@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block footer_scripts %}
+    <link rel="stylesheet" href="{% static 'create_team.css' %}">
+{% endblock footer_scripts %}
+
 {% block title %}
     Stwórz drużynę
 {% endblock %}
@@ -8,18 +12,20 @@
 
 
 {% block content %}
-    <h3>Stwórz nową drużynę</h3>
-    <br>
-    <form method="post" action="/teams/new/" class="form-group">
-        {% csrf_token %}
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button name="zapisz" type="submit" class="btn btn-success"
-                        style="background-color: #00bfbf; border-color: #00bfbf">Stwórz
-                    drużynę
-                </button>
+    <div class="content-wrapper">
+        <h3>Stwórz nową drużynę</h3>
+        <br>
+        <form method="post" action="/teams/new/" class="form-group">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button name="zapisz" type="submit" class="btn btn-success"
+                            style="background-color: #00bfbf; border-color: #00bfbf">Stwórz
+                        drużynę
+                    </button>
+                </div>
+                {{ form.name }}
             </div>
-            {{ form.name }}
-        </div>
-    </form>
+        </form>
+    </div>
 {% endblock %}
