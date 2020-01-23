@@ -50,23 +50,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <form method="post">
-                {% csrf_token %}
-                <select class="form-control" id="optCity" name="chosenPlayer" required>
-                    <option value="None" selected disabled hidden>Zawodnik 1</option>
-                    {% for player in all_players %}
-
-                        <option value="{{ player.id }}">{{ player }}</option>
-
-                    {% endfor %}
-                </select>
-                <div class="input-group-prepend">
-                    <button type="submit" , name="newItem" , value="newItem" , class="btn btn-info">Dodaj zawodnika
-                    </button>
-                </div>
-            </form>
         </div>
 
 
@@ -91,19 +74,6 @@
                     </div>
                 </div>
             </div>
-            <form method="post">
-                {% csrf_token %}
-                <select class="form-control" id="optCity" name="chosenPlayer" required>
-                    <option value="None" selected disabled hidden>Zawodnik 2</option>
-                    {% for player in all_players %}
-                        <option value="{{ player.id }}">{{ player }}</option>
-                    {% endfor %}
-                </select>
-                <div class="input-group-prepend">
-                    <button type="submit" , name="newItem2" , value="newItem2" , class="btn btn-info">Dodaj zawodnika
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
 
@@ -131,19 +101,7 @@
             </div>
 
 
-            <form method="post">
-                {% csrf_token %}
-                <select class="form-control" id="optCity" name="chosenPlayer" required>
-                    <option value="None" selected disabled hidden>Zawodnik 3</option>
-                    {% for player in all_players %}
-                        <option value="{{ player.id }}">{{ player }}</option>
-                    {% endfor %}
-                </select>
-                <div class="input-group-prepend">
-                    <button type="submit" , name="newItem3" , value="newItem3" , class="btn btn-info">Dodaj zawodnika
-                    </button>
-                </div>
-            </form>
+
 
         </div>
 
@@ -170,19 +128,7 @@
                 </div>
             </div>
 
-            <form method="post">
-                {% csrf_token %}
-                <select class="form-control" id="optCity" name="chosenPlayer" required>
-                    <option value="None" selected disabled hidden>Zawodnik 4</option>
-                    {% for player in all_players %}
-                        <option value="{{ player.id }}">{{ player }}</option>
-                    {% endfor %}
-                </select>
-                <div class="input-group-prepend">
-                    <button type="submit" , name="newItem4" , value="newItem4" , class="btn btn-info">Dodaj zawodnika
-                    </button>
-                </div>
-            </form>
+
 
         </div>
     </div>

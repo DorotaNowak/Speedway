@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from datetime import date
 import hashlib
+from django.contrib import messages
 
 
 def home_response(request):
@@ -34,7 +35,7 @@ def create_team(response):
             team.save()  # save to database
             response.user.team.add(team)
 
-            return HttpResponseRedirect("/teams/%i" % team.id)
+        return HttpResponseRedirect("/teams/%i" % team.id)
 
     else:
         form = CreateTeamForm()
@@ -45,6 +46,9 @@ def create_team(response):
 @login_required
 def my_teams(request):
     return render(request, "my_teams.html")
+
+
+
 
 
 @login_required
@@ -62,26 +66,41 @@ def index(response, id):
         exclude_players.append(team.player4.id)
 
     all_players = Player.objects.exclude(pk__in=exclude_players)
-    if team in response.user.team.all() and today != '20200117':
+    if team in response.user.team.all() and today != '20200122':
         if response.method == "POST":
-            if response.POST.get("newItem"):
+            if response.POST.get("save"):
+                for item in team:
+                    if response.POST.get("c" + str(item.id)) == "clicked":
+                        item.complete = True
+                    else:
+                        item.complete = False
+
+                    item.save()
+
+            elif response.POST.get("newItem"):
                 player_id = response.POST.get("chosenPlayer")
-                if player_id:
+                if player_id:  # ktos kliknal dodaj zawodnika i zaznaczyl zawodnika
                     player = Player.objects.filter(id=player_id)[0]
                     old_price = 0
                     if team.player1:
+                        print('bbbbbbb')
                         old_price = team.player1.price
-                        old_player_id = team.player1.id
+                        # old_player_id = team.player1.id
                     if team.budget + old_price >= player.price:
+                        print('aaaaaaaaaaaaaaaaaaa')
                         team.player1 = player
                         team.budget = team.budget - player.price + old_price
                         team.save()
                         exclude_players.append(player.id)
                         all_players = Player.objects.exclude(pk__in=exclude_players)
-                    else:
-                        print('aaaaaa')
+                    if team.budget + old_price < player.price:
+                        messages.info(response, 'Nie masz wystarczającego budżetu na zakup zawodnika: ' + str(
+                            player.last_name) + ' ' + str(player.first_name))
+                        print('klurwa')
                 else:
-                    print("invalid")
+                    messages.info(response, 'Nie masz wystarczającego budżetu na zakup zawodnika: ')
+                    return render(response, "team.html",
+                                  {"team": team, "all_players": all_players, "messages": messages})
 
             elif response.POST.get("newItem2"):
                 player_id = response.POST.get("chosenPlayer")
@@ -138,7 +157,7 @@ def index(response, id):
 
         return render(response, "team.html", {"team": team, "all_players": all_players})
 
-    return render(response, "home.html")
+    return render(response, "blocked_team.html",{"team":team})
 
 
 @login_required
@@ -163,6 +182,7 @@ def join_to_league(response):
                 league.users.add(response.user)
                 print(league_id)
                 return HttpResponseRedirect("/leagues/add-teams/%i" % league_id)
+                # return HttpResponseRedirect(reverse("add-teams-to-league-name"), {"league_id":league_id})
 
         else:
             return render(response, "join_to_league.html")

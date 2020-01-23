@@ -8,10 +8,10 @@ class Player(models.Model):
     team = models.CharField(max_length=10)
     nationality = models.CharField(max_length=10)
     price = models.IntegerField()
-    actual_score = models.IntegerField(default=0)
+    average_score = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.last_name + ' ' + self.first_name + '    ' + 'cena:' +str(self.price) + '    ' + 'sredni wynik:'+str(self.actual_score)
+        return self.last_name + ' ' + self.first_name + '    ' + 'cena:' +str(self.price) + '    ' + 'sredni wynik:'+str(self.average_score)
 
     # return path to player's image
     def get_path(self):
@@ -34,8 +34,8 @@ class Team(models.Model):
         self.score = 0
         for player in players:
             if player is not None:
-                print(player.actual_score)
-                self.score = self.score + player.actual_score
+                print(player.average_score)
+                self.score = self.score + player.average_score
         return self.score
 
 
