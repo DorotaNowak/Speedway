@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.accounts',
     'apps.fantasy_league',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
