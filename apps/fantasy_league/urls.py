@@ -10,6 +10,12 @@ from .views import join_to_league
 from .views import add_teams_to_league
 from .views import my_leagues
 
+from django.conf.urls import url,include
+from rest_framework import routers
+from .views import UserViewSet
+router=routers.DefaultRouter()
+router.register(r'users',UserViewSet)
+
 urlpatterns = [
     path('', home_response, name='home'),
     path('accounts/profile/', after_login_response, name='test'),
@@ -20,5 +26,6 @@ urlpatterns = [
     path('leagues/<int:id>', chosen_league, name='chosen_league'),
     path('leagues/', my_leagues),
     path('leagues/join/', join_to_league),
-    path('leagues/add-teams/<int:league_id>', add_teams_to_league, name='add-teams-to-league-name')
+    path('leagues/add-teams/<int:league_id>', add_teams_to_league, name='add-teams-to-league-name'),
+    url(r'^',include(router.urls))
 ]

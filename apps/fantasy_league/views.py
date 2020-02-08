@@ -7,6 +7,14 @@ from django.contrib.auth.decorators import login_required
 from datetime import date
 import hashlib
 from django.contrib import messages
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from .serializers import UserSerializer, GroupSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
 
 
 def home_response(request):
@@ -46,9 +54,6 @@ def create_team(response):
 @login_required
 def my_teams(request):
     return render(request, "my_teams.html")
-
-
-
 
 
 @login_required
@@ -157,7 +162,7 @@ def index(response, id):
 
         return render(response, "team.html", {"team": team, "all_players": all_players})
 
-    return render(response, "blocked_team.html",{"team":team})
+    return render(response, "blocked_team.html", {"team": team})
 
 
 @login_required
